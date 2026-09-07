@@ -8,6 +8,5 @@ export enum Network {
 
 export interface OnChainData {
   total: bigint;
-  price: bigint;
   block: bigint;
 }
