@@ -6,7 +6,12 @@ export enum Network {
   PLUME = "PLUME",
 }
 
-export interface OnChainData {
-  total: bigint;
+export interface Snapshot {
   block: bigint;
+  shares: bigint;
+}
+
+export interface Shares {
+  total: bigint;
+  blockNumbers: Record<Network, Snapshot>;
 }

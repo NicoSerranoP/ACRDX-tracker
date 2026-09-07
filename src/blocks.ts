@@ -8,6 +8,18 @@ const getBlocksToMonitor = (currentBlock: bigint, network: Network): bigint[] =>
     case Network.ETH:
       oneDayBlocks = (24n * 60n * 60n) / 12n; // Assuming 12s per block
       break;
+    case Network.OP:
+      oneDayBlocks = (24n * 60n * 60n) / 2n; // Assuming 2s per block
+      break;
+    case Network.MONAD:
+      oneDayBlocks = (24n * 60n * 60n * 5n) / 2n; // Assuming 0.4s = 4/10 s = 2/5 s per block
+      break;
+    case Network.BASE:
+      oneDayBlocks = (24n * 60n * 60n) / 2n; // Assuming 2s per block
+      break;
+    case Network.PLUME:
+      oneDayBlocks = (24n * 60n * 60n) / 1n; // Assuming 1s per block
+      break;
     default:
       throw new Error("Unsupported network");
   }

@@ -3,7 +3,7 @@ import { createPublicClient, getContract, Hex, http, PublicClient } from "viem";
 
 import ACRDX_ABI from "./abis/ACRDX.json" with { type: "json" };
 import CHRONICLE_ORACLE_ABI from "./abis/ChronicleOracle.json" with { type: "json" };
-import { Network, OnChainData } from "./types.js";
+import { Network, Snapshot } from "./types.js";
 import getBlocksToMonitor from "./blocks.js";
 
 loadEnvFile("./.env");
@@ -34,7 +34,7 @@ export default class Rpc {
     });
   }
 
-  async getTotalSupplyByBlocks(network: Network, address: Hex): Promise<OnChainData[]> {
+  async getTotalSupplyByBlocks(network: Network, address: Hex): Promise<Snapshot[]> {
     const client = this.clients[network];
 
     const currentBlock = await client.getBlockNumber();
@@ -49,7 +49,7 @@ export default class Rpc {
     const promises = blocks.map(async (block) => {
       const total = (await contract.read.totalSupply({ blockNumber: block })) as bigint;
 
-      return { block, total };
+      return { block, shares: total };
     });
 
     return Promise.all(promises);
