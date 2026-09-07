@@ -3,6 +3,7 @@ import { Hex } from "viem";
 
 loadEnvFile("./.env");
 
+export const DAYS_TO_MONITOR = BigInt(process.env.DAYS_TO_MONITOR ?? "45");
 export const ACRDX_CONTRACT_ADDRESS = process.env.ACRDX_CONTRACT_ADDRESS as Hex;
 export const CHRONICLE_ORACLE_ADDRESS = process.env.CHRONICLE_ORACLE_ADDRESS as Hex;
 

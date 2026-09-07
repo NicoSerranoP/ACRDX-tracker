@@ -21,14 +21,14 @@ export default class Rpc {
       }
 
       const client = createPublicClient({
-        transport: http(envRPCUrl, { batch: true }),
+        transport: http(envRPCUrl, { batch: { wait: 10 } }),
       });
 
       this.clients[network as Network] = client;
     });
   }
 
-  async getTotalSupply(network: Network, address: Hex) {
+  async getTotalSupply(network: Network, address: Hex, blockNumber?: bigint) {
     const client = this.clients[network];
 
     const contract = getContract({
@@ -37,10 +37,10 @@ export default class Rpc {
       abi: ACRDX_ABI,
     });
 
-    return contract.read.totalSupply();
+    return contract.read.totalSupply({ blockNumber });
   }
 
-  async getPrice(network: Network, address: Hex) {
+  async getPrice(network: Network, address: Hex, blockNumber?: bigint) {
     const client = this.clients[network];
 
     const contract = getContract({
@@ -49,6 +49,6 @@ export default class Rpc {
       abi: CHRONICLE_ORACLE_ABI,
     });
 
-    return contract.read.read();
+    return contract.read.read({ blockNumber });
   }
 }
