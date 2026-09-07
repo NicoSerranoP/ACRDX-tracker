@@ -37,7 +37,7 @@ export default class Rpc {
       abi: ACRDX_ABI,
     });
 
-    return contract.read.totalSupply({ blockNumber });
+    return contract.read.totalSupply({ blockNumber }) as Promise<bigint>;
   }
 
   async getPrice(network: Network, address: Hex, blockNumber?: bigint) {
@@ -49,6 +49,6 @@ export default class Rpc {
       abi: CHRONICLE_ORACLE_ABI,
     });
 
-    return contract.read.read({ blockNumber });
+    return contract.read.read({ blockNumber }) as Promise<bigint>;
   }
 }

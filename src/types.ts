@@ -5,3 +5,9 @@ export enum Network {
   BASE = "BASE",
   PLUME = "PLUME",
 }
+
+export interface OnChainData {
+  total: bigint;
+  price: bigint;
+  block: bigint;
+}
