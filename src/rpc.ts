@@ -3,7 +3,8 @@ import { createPublicClient, getContract, Hex, http, PublicClient } from "viem";
 
 import ACRDX_ABI from "./abis/ACRDX.json" with { type: "json" };
 import CHRONICLE_ORACLE_ABI from "./abis/ChronicleOracle.json" with { type: "json" };
-import { Network } from "./types.js";
+import { Network, OnChainData } from "./types.js";
+import getBlocksToMonitor from "./blocks.js";
 
 loadEnvFile("./.env");
 
@@ -22,14 +23,22 @@ export default class Rpc {
 
       const client = createPublicClient({
         transport: http(envRPCUrl, { batch: { wait: 10 } }),
+        batch: {
+          multicall: {
+            wait: 10,
+          },
+        },
       });
 
       this.clients[network as Network] = client;
     });
   }
 
-  async getTotalSupply(network: Network, address: Hex, blockNumber?: bigint) {
+  async getTotalSupplyByBlocks(network: Network, address: Hex): Promise<OnChainData[]> {
     const client = this.clients[network];
+
+    const currentBlock = await client.getBlockNumber();
+    const blocks = getBlocksToMonitor(currentBlock, network);
 
     const contract = getContract({
       client,
@@ -37,7 +46,13 @@ export default class Rpc {
       abi: ACRDX_ABI,
     });
 
-    return contract.read.totalSupply({ blockNumber }) as Promise<bigint>;
+    const promises = blocks.map(async (block) => {
+      const total = (await contract.read.totalSupply({ blockNumber: block })) as bigint;
+
+      return { block, total };
+    });
+
+    return Promise.all(promises);
   }
 
   async getPrice(network: Network, address: Hex, blockNumber?: bigint) {
