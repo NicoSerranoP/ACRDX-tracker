@@ -1,17 +1,16 @@
-import { loadEnvFile } from "node:process";
 import Rpc from "./rpc.js";
 import { Network } from "./types.js";
+import { ACRDX_CONTRACT_ADDRESS, CHRONICLE_ORACLE_ADDRESS } from "./constants.js";
 
-loadEnvFile("./.env");
+const main = async (): Promise<void> => {
+  const rpc = new Rpc();
 
-const main = (): void => {
-  const rpcProvider = new Rpc();
+  const total = await rpc.getTotalSupply(Network.ETH, ACRDX_CONTRACT_ADDRESS);
+  const price = await rpc.getPrice(Network.ETH, CHRONICLE_ORACLE_ADDRESS);
 
-  console.log("ETH RPC URL:", rpcProvider.clients[Network.ETH]);
-  console.log("OP RPC URL:", rpcProvider.clients[Network.OP]);
-  console.log("MONAD RPC URL:", rpcProvider.clients[Network.MONAD]);
-  console.log("BASE RPC URL:", rpcProvider.clients[Network.BASE]);
-  console.log("PLUME RPC URL:", rpcProvider.clients[Network.PLUME]);
+  console.log("total: ", total);
+  console.log("price: ", price);
+
   return;
 };
 
