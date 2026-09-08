@@ -34,3 +34,4 @@ All this information was fetched on September 7th 2026
 3. [Typescript monitoring tool](../README.md): shows
    - for exact daily monitoring, the script takes around ~5 minutes to finish.
    - `shares.json` (line 777) shows the Plume burn incident. $42M before, $30M after.
+   - `shares.json` (line 777) shows another burn in Ethereum. 378,869 tokens before, 261,058 after. 117,810 burned tokens.
