@@ -8,7 +8,7 @@ ACRDX is deployed in 5 different networks: Ethereum, Optimism, Monad, Base and P
 
 ## How to Monitor ACRDX
 
-To monitor ACRDX, we track the on-chain total supply of the token and multiply it by the oracle price provided by Chronicle Labs and their Proof Of Assets mechanism (it is a trusted mechanism). We follow up token supply and oracle price accross a time frame in order to check for anomalies.
+To monitor ACRDX, we track the on-chain total supply of the token and multiply it by the oracle price provided by Chronicle Labs and their Proof Of Assets mechanism (it is a trusted mechanism). We follow up token supply and oracle price accross a time frame in order to check for anomalies. There is only one Chronicle Labs oracle and each network USDC vault was deployed using Axelar (cross-chain communication) so I assume the price feed is coming from the only Chronicle Labs oracle deployed on Ethereum mainnet.
 
 _TODO:_ Explore the ACRDX vaults to look for asset holdings (only USDC as of now) and cross-check them with the anomalies movement. It looks like it might be related to a staled oracle price. The vault exposes the Chronicle Labs price in `pricePerShare()` and `priceLastUpdated()`, We could monitor it for anomalies.
 
