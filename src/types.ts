@@ -9,11 +9,13 @@ export enum Network {
 export interface Snapshot {
   block: bigint;
   shares: bigint;
+  oraclePrice: bigint;
   pricePerShare: bigint;
   priceLastUpdated: bigint;
 }
 
 export interface Shares {
+  day: number;
   total: bigint;
   blockNumbers: Record<Network, Snapshot>;
 }

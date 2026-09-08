@@ -7,6 +7,7 @@ import CHRONICLE_ORACLE_ABI from "./abis/ChronicleOracle.json" with { type: "jso
 import { BlockResult, Network, Snapshot } from "./types.js";
 import {
   ACRDX_CONTRACT_ADDRESSES,
+  CHRONICLE_ORACLE_ADDRESS,
   DAYS_TO_MONITOR,
   ONE_DAY_IN_BLOCKS,
   ONE_DAY_IN_SECONDS,
@@ -58,14 +59,28 @@ export default class Rpc {
       abi: USDC_VAULT_ABI,
     });
 
+    const oracleContract = getContract({
+      client: this.clients[Network.ETH],
+      address: CHRONICLE_ORACLE_ADDRESS,
+      abi: CHRONICLE_ORACLE_ABI,
+    });
+
     const blocks = await this.getBlockWindow(network);
 
     const promises = blocks.map(async (block) => {
-      const totalSupply = (await acrdxContract.read.totalSupply({ blockNumber: block })) as bigint;
-      const pricePerShare = (await vaultContract.read.pricePerShare({ blockNumber: block })) as bigint;
-      const priceLastUpdated = (await vaultContract.read.priceLastUpdated({ blockNumber: block })) as bigint;
+      const [totalSupply, pricePerShare, priceLastUpdated] = await Promise.all([
+        acrdxContract.read.totalSupply({ blockNumber: block }) as Promise<bigint>,
+        vaultContract.read.pricePerShare({ blockNumber: block }) as Promise<bigint>,
+        vaultContract.read.priceLastUpdated({ blockNumber: block }) as Promise<bigint>,
+      ]);
 
-      return { block, shares: totalSupply, pricePerShare, priceLastUpdated };
+      let oraclePrice = 0n;
+
+      if (network === Network.ETH) {
+        oraclePrice = (await oracleContract.read.read({ blockNumber: block })) as bigint;
+      }
+
+      return { block, shares: totalSupply, pricePerShare, priceLastUpdated, oraclePrice };
     });
 
     return Promise.all(promises);
@@ -85,9 +100,12 @@ export default class Rpc {
 
   async getBlockWindow(network: Network): Promise<bigint[]> {
     const client = this.clients[network];
-    const latestBlock = await client.getBlock();
+    const latest = await client.getBlock({ blockTag: "latest" });
+    const latestBlock: BlockResult = { number: latest.number, timestamp: latest.timestamp };
 
+    const sharedCache = new Map<bigint, bigint>([[latestBlock.number, latestBlock.timestamp]]);
     const window: bigint[] = [];
+    let previousResolved: BlockResult | undefined;
 
     for (let i = DAYS_TO_MONITOR - 1n; i >= 0n; i--) {
       const targetDaySeconds = i * ONE_DAY_IN_SECONDS;
@@ -96,8 +114,16 @@ export default class Rpc {
       const guessedDayBlocks = i * ONE_DAY_IN_BLOCKS[network];
       const guessedBlockNumber = guessedDayBlocks > latestBlock.number ? 0n : latestBlock.number - guessedDayBlocks;
 
-      const resolved = await this.getBlockByTimestamp(client, targetTimestamp, guessedBlockNumber);
+      const lowBound = previousResolved && previousResolved.timestamp <= targetTimestamp ? previousResolved.number : 0n;
+
+      const resolved = await this.getBlockByTimestamp(client, targetTimestamp, guessedBlockNumber, {
+        latestBlock,
+        cache: sharedCache,
+        lowBound,
+      });
+
       window.push(resolved.number);
+      previousResolved = resolved;
     }
 
     return window;
@@ -107,8 +133,14 @@ export default class Rpc {
     client: PublicClient,
     targetTimestamp: bigint,
     guessedBlockNumber: bigint,
+    searchOptions?: {
+      latestBlock?: BlockResult;
+      cache?: Map<bigint, bigint>;
+      lowBound?: bigint;
+      highBound?: bigint;
+    },
   ): Promise<BlockResult> {
-    const cache = new Map<bigint, bigint>();
+    const cache = searchOptions?.cache ?? new Map<bigint, bigint>();
 
     const getTimestampAt = async (blockNumber: bigint): Promise<bigint> => {
       const cached = cache.get(blockNumber);
@@ -121,22 +153,49 @@ export default class Rpc {
       return block.timestamp;
     };
 
-    const latestBlock = await client.getBlock({ blockTag: "latest" });
+    let latestBlock = searchOptions?.latestBlock;
+    if (!latestBlock) {
+      const latest = await client.getBlock({ blockTag: "latest" });
+      latestBlock = { number: latest.number, timestamp: latest.timestamp };
+    }
     cache.set(latestBlock.number, latestBlock.timestamp);
 
     if (targetTimestamp > latestBlock.timestamp) {
       throw new Error("Target timestamp is after the last available block");
     }
 
-    let low = 0n;
-    if (guessedBlockNumber > 0n && guessedBlockNumber <= latestBlock.number) {
-      const guessedLowTimestamp = await getTimestampAt(guessedBlockNumber);
-      if (guessedLowTimestamp <= targetTimestamp) {
+    let low = searchOptions?.lowBound ?? 0n;
+
+    if (low < 0n) {
+      low = 0n;
+    }
+
+    if (low > latestBlock.number) {
+      low = latestBlock.number;
+    }
+
+    let high = searchOptions?.highBound ?? latestBlock.number;
+
+    if (high > latestBlock.number) {
+      high = latestBlock.number;
+    }
+
+    if (high < low) {
+      high = low;
+    }
+
+    if (guessedBlockNumber >= low && guessedBlockNumber <= high) {
+      const guessedTimestamp = await getTimestampAt(guessedBlockNumber);
+
+      if (guessedTimestamp <= targetTimestamp) {
         low = guessedBlockNumber;
+      }
+
+      if (guessedTimestamp >= targetTimestamp) {
+        high = guessedBlockNumber;
       }
     }
 
-    let high = latestBlock.number;
     let result: BlockResult = {
       number: latestBlock.number,
       timestamp: latestBlock.timestamp,

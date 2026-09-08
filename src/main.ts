@@ -22,6 +22,7 @@ const main = async (): Promise<void> => {
     const total = ethereum[i].shares + optimism[i].shares + monad[i].shares + base[i].shares + plume[i].shares;
 
     shares.push({
+      day: i + 1,
       total,
       blockNumbers: {
         [Network.ETH]: ethereum[i],
