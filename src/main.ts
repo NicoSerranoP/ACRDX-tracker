@@ -18,16 +18,16 @@ const main = async (): Promise<void> => {
   const shares: Shares[] = [];
 
   for (let i = 0; i < DAYS_TO_MONITOR; i++) {
-    const total = ethereum[0].shares + optimism[0].shares + monad[0].shares + base[0].shares + plume[0].shares;
+    const total = ethereum[i].shares + optimism[i].shares + monad[i].shares + base[i].shares + plume[i].shares;
 
     shares.push({
       total,
       blockNumbers: {
-        [Network.ETH]: ethereum[0],
-        [Network.OP]: optimism[0],
-        [Network.MONAD]: monad[0],
-        [Network.BASE]: base[0],
-        [Network.PLUME]: plume[0],
+        [Network.ETH]: ethereum[i],
+        [Network.OP]: optimism[i],
+        [Network.MONAD]: monad[i],
+        [Network.BASE]: base[i],
+        [Network.PLUME]: plume[i],
       },
     });
   }

@@ -12,11 +12,14 @@ To monitor ACRDX, we track the on-chain total supply of the token and multiply i
 
 ## Data sources
 
+All this information was fetched on September 7th 2026
+
 1. [Chronicle Labs Proof of Assets:](https://chroniclelabs.org/dashboard/proof-of-asset/anemoy-tokenized-apollo-acrdx): shows:
    - Share token price: $1.024337
    - Outstanding shares: 30,472,585
    - Net Asset Value (NAV): $31,2140,200 (share token price * outstanding shares = $31,214,196)
    - NAV calculation frequency: daily
+   - This repo monitoring results: shares * oracle price = $31,214,197.40. There is a $1.40 discrepancy compared to the reported NAV.
    - **IMPORTANT:** shows 42,634,425 token supply on August 3rd
    - **IMPORTANT:** The ACRDX Transfers Analytics only show [one tx](https://explorer.plume.org/tx/0x9436d124e15bea9def739ab01daf192f8c70b87d16787bbdddba2868ced5008e?tab=state) with 12,020,502 being burned to 0x0 in the Plume network. Total supply before: 32,222,245. Total supply after: 20,201,743
 
