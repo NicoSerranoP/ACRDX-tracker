@@ -21,7 +21,7 @@ All this information was fetched on September 7th 2026
    - NAV calculation frequency: daily
    - This repo monitoring results: shares * oracle price = $31,214,197.40. There is a $1.40 discrepancy compared to the reported NAV.
    - **IMPORTANT:** shows 42,634,425 token supply on August 3rd
-   - **IMPORTANT:** The ACRDX Transfers Analytics only show [one tx](https://explorer.plume.org/tx/0x9436d124e15bea9def739ab01daf192f8c70b87d16787bbdddba2868ced5008e?tab=state) with 12,020,502 being burned to 0x0 in the Plume network. Total supply before: 32,222,245. Total supply after: 20,201,743
+   - **IMPORTANT:** The ACRDX Transfers Analytics only show [one tx](https://explorer.plume.org/tx/0x9436d124e15bea9def739ab01daf192f8c70b87d16787bbdddba2868ced5008e?tab=state) with 12,020,502 being burned to 0x0 in the Plume network on August 10th 2026. Total supply before: 32,222,245. Total supply after: 20,201,743
 
 2. [Centrifuge Pool interface](https://app.centrifuge.io/pool/281474976710664): shows:
    - Accepts stablecoins: USDC, USDS, AUSD, USDT
