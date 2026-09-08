@@ -12,12 +12,26 @@ export const ACRDX_MONAD_CONTRACT_ADDRESS = process.env.ACRDX_MONAD_CONTRACT_ADD
 export const ACRDX_BASE_CONTRACT_ADDRESS = process.env.ACRDX_BASE_CONTRACT_ADDRESS as Hex;
 export const ACRDX_PLUME_CONTRACT_ADDRESS = process.env.ACRDX_PLUME_CONTRACT_ADDRESS as Hex;
 
+export const USDC_ETH_CONTRACT_ADDRESS = process.env.USDC_ETH_CONTRACT_ADDRESS as Hex;
+export const USDC_OP_CONTRACT_ADDRESS = process.env.USDC_OP_CONTRACT_ADDRESS as Hex;
+export const USDC_MONAD_CONTRACT_ADDRESS = process.env.USDC_MONAD_CONTRACT_ADDRESS as Hex;
+export const USDC_BASE_CONTRACT_ADDRESS = process.env.USDC_BASE_CONTRACT_ADDRESS as Hex;
+export const USDC_PLUME_CONTRACT_ADDRESS = process.env.USDC_PLUME_CONTRACT_ADDRESS as Hex;
+
 export const ACRDX_CONTRACT_ADDRESSES = {
   [Network.ETH]: ACRDX_ETH_CONTRACT_ADDRESS,
   [Network.OP]: ACRDX_OP_CONTRACT_ADDRESS,
   [Network.MONAD]: ACRDX_MONAD_CONTRACT_ADDRESS,
   [Network.BASE]: ACRDX_BASE_CONTRACT_ADDRESS,
   [Network.PLUME]: ACRDX_PLUME_CONTRACT_ADDRESS,
+};
+
+export const USDC_CONTRACT_ADDRESSES = {
+  [Network.ETH]: USDC_ETH_CONTRACT_ADDRESS,
+  [Network.OP]: USDC_OP_CONTRACT_ADDRESS,
+  [Network.MONAD]: USDC_MONAD_CONTRACT_ADDRESS,
+  [Network.BASE]: USDC_BASE_CONTRACT_ADDRESS,
+  [Network.PLUME]: USDC_PLUME_CONTRACT_ADDRESS,
 };
 
 if (!CHRONICLE_ORACLE_ADDRESS) {
@@ -42,6 +56,26 @@ if (!ACRDX_BASE_CONTRACT_ADDRESS) {
 
 if (!ACRDX_PLUME_CONTRACT_ADDRESS) {
   throw new Error("ACRDX_PLUME_CONTRACT_ADDRESS is not defined in the env variables.");
+}
+
+if (!USDC_ETH_CONTRACT_ADDRESS) {
+  throw new Error("USDC_ETH_CONTRACT_ADDRESS is not defined in the env variables.");
+}
+
+if (!USDC_OP_CONTRACT_ADDRESS) {
+  throw new Error("USDC_OP_CONTRACT_ADDRESS is not defined in the env variables.");
+}
+
+if (!USDC_MONAD_CONTRACT_ADDRESS) {
+  throw new Error("USDC_MONAD_CONTRACT_ADDRESS is not defined in the env variables.");
+}
+
+if (!USDC_BASE_CONTRACT_ADDRESS) {
+  throw new Error("USDC_BASE_CONTRACT_ADDRESS is not defined in the env variables.");
+}
+
+if (!USDC_PLUME_CONTRACT_ADDRESS) {
+  throw new Error("USDC_PLUME_CONTRACT_ADDRESS is not defined in the env variables.");
 }
 
 export const ONE_DAY_IN_BLOCKS = {

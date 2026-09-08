@@ -10,7 +10,7 @@ ACRDX is deployed in 5 different networks: Ethereum, Optimism, Monad, Base and P
 
 To monitor ACRDX, we track the on-chain total supply of the token and multiply it by the oracle price provided by Chronicle Labs and their Proof Of Assets mechanism (it is a trusted mechanism). We follow up token supply and oracle price accross a time frame in order to check for anomalies.
 
-_TODO:_ Explore the ACRDX vaults to look for asset holdings and cross-check them with the anomalies movement
+_TODO:_ Explore the ACRDX vaults to look for asset holdings (only USDC as of now) and cross-check them with the anomalies movement. It looks like it might be related to a staled oracle price. The vault exposes the Chronicle Labs price in `pricePerShare()` and `priceLastUpdated()`, We could monitor it for anomalies.
 
 _TODO:_ Additionally, we compare this calculated value with the reported AUM (Assets Under Management) to ensure accuracy. The reported AUM is provided by <TO_BE_CONFIRMED_BUT_I_BELIEVE_BY_CENTRIFUGE_API>.
 
@@ -29,6 +29,7 @@ All this information was fetched on September 7th 2026
 
 2. [Centrifuge Pool interface](https://app.centrifuge.io/pool/281474976710664): shows:
    - Accepts stablecoins: USDC, USDS, AUSD, USDT
+   - If you interact with the ACRDX contract.vault(asset) function, you will see that the only active vault is for USDC.
    - **IMPORTANT:** shows $42,362,030 as Apollo Diversified Credit Market Value as of July 20, 2026. Maybe it is connected to the token supply event in August 3rd.
 
 3. [Typescript monitoring tool](../README.md): shows
