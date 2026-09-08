@@ -8,7 +8,11 @@ ACRDX is deployed in 5 different networks: Ethereum, Optimism, Monad, Base and P
 
 ## How to Monitor ACRDX
 
-To monitor ACRDX, we track the on-chain total supply of the token and multiply it by the oracle price provided by Chronicle Labs and their Proof Of Assets mechanism (it is a trusted mechanism). Additionally, we compare this calculated value with the reported AUM (Assets Under Management) to ensure accuracy. The reported AUM is provided by <TO_BE_CONFIRMED_BUT_I_BELIEVE_BY_CENTRIFUGE_API>.
+To monitor ACRDX, we track the on-chain total supply of the token and multiply it by the oracle price provided by Chronicle Labs and their Proof Of Assets mechanism (it is a trusted mechanism). We follow up token supply and oracle price accross a time frame in order to check for anomalies.
+
+_TODO:_ Explore the ACRDX vaults to look for asset holdings and cross-check them with the anomalies movement
+
+_TODO:_ Additionally, we compare this calculated value with the reported AUM (Assets Under Management) to ensure accuracy. The reported AUM is provided by <TO_BE_CONFIRMED_BUT_I_BELIEVE_BY_CENTRIFUGE_API>.
 
 ## Data sources
 
@@ -26,3 +30,7 @@ All this information was fetched on September 7th 2026
 2. [Centrifuge Pool interface](https://app.centrifuge.io/pool/281474976710664): shows:
    - Accepts stablecoins: USDC, USDS, AUSD, USDT
    - **IMPORTANT:** shows $42,362,030 as Apollo Diversified Credit Market Value as of July 20, 2026. Maybe it is connected to the token supply event in August 3rd.
+
+3. [Typescript monitoring tool](../README.md): shows
+   - for exact daily monitoring, the script takes around ~5 minutes to finish.
+   - `shares.json` (line 777) shows the Plume burn incident. $42M before, $30M after.

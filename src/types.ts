@@ -15,3 +15,8 @@ export interface Shares {
   total: bigint;
   blockNumbers: Record<Network, Snapshot>;
 }
+
+export interface BlockResult {
+  number: bigint;
+  timestamp: bigint;
+}

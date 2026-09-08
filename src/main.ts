@@ -5,6 +5,7 @@ import { formatUnits } from "viem/utils";
 import saveAsJSONFile from "./file.js";
 
 const main = async (): Promise<void> => {
+  const start = Date.now();
   const rpc = new Rpc();
 
   const [ethereum, optimism, monad, base, plume] = await Promise.all([
@@ -38,9 +39,10 @@ const main = async (): Promise<void> => {
   const formattedOraclePrice = Number(formatUnits(oraclePrice, 18)).toFixed(6);
   const currentTotalShares = Number(formatUnits(shares[44].total, 18)).toFixed(2);
 
-  console.log("oraclePrice: ", formattedOraclePrice);
-  console.log("current AUM:", (Number(currentTotalShares) * Number(formattedOraclePrice)).toFixed(2));
+  console.log("current price: ", formattedOraclePrice);
+  console.log("current AUM: ", (Number(currentTotalShares) * Number(formattedOraclePrice)).toFixed(2));
 
+  console.log(`Execution time: ${(Date.now() - start) / (60 * 1000)} min`);
   return;
 };
 

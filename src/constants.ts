@@ -43,3 +43,13 @@ if (!ACRDX_BASE_CONTRACT_ADDRESS) {
 if (!ACRDX_PLUME_CONTRACT_ADDRESS) {
   throw new Error("ACRDX_PLUME_CONTRACT_ADDRESS is not defined in the env variables.");
 }
+
+export const ONE_DAY_IN_BLOCKS = {
+  [Network.ETH]: (24n * 60n * 60n) / 12n, // assuming 12s per block
+  [Network.OP]: (24n * 60n * 60n) / 2n, // assuming 2s per block
+  [Network.MONAD]: (24n * 60n * 60n * 10n) / 3n, // assuming 0.3s = 3/10 s per block
+  [Network.BASE]: (24n * 60n * 60n) / 2n, // assuming 2s per block
+  [Network.PLUME]: (24n * 60n * 60n * 5n) / 2n, // assuming 0.4s per block
+};
+
+export const ONE_DAY_IN_SECONDS = 24n * 60n * 60n;
