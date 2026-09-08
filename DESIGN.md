@@ -26,6 +26,7 @@ All this information was fetched on September 7th 2026
    - This repo monitoring results: shares * oracle price = $31,214,197.40. There is a $1.40 discrepancy compared to the reported NAV.
    - **IMPORTANT:** shows 42,634,425 token supply on August 3rd
    - **IMPORTANT:** The ACRDX Transfers Analytics only show [one tx](https://explorer.plume.org/tx/0x9436d124e15bea9def739ab01daf192f8c70b87d16787bbdddba2868ced5008e?tab=state) with 12,020,502 being burned to 0x0 in the Plume network on August 10th 2026. Total supply before: 32,222,245. Total supply after: 20,201,743
+   - **IMPORTANT:** The sender of the burn tx executed a similar tx burning 17M tokens in May 12th. He performs a 1 token test tx before executing the large burns (17M and 12M).
 
 2. [Centrifuge Pool interface](https://app.centrifuge.io/pool/281474976710664): shows:
    - Accepts stablecoins: USDC, USDS, AUSD, USDT
@@ -34,5 +35,6 @@ All this information was fetched on September 7th 2026
 
 3. [Typescript monitoring tool](../README.md): shows
    - for exact daily monitoring, the script takes around ~5 minutes to finish.
-   - `shares.json` (line 777) shows the Plume burn incident. $42M before, $30M after.
-   - `shares.json` (line 777) shows another burn in Ethereum. 378,869 tokens before, 261,058 after. 117,810 burned tokens.
+   - `shares.json` (ETH block number: 25722135) shows the Plume burn incident. $42M before, $30M after.
+   - `shares.json` (ETH block number: 25722135) shows another burn in Ethereum. 378,869 tokens before, 261,058 after. 117,810 burned tokens.
+   - The Alchemy Monad API cannot get historical eth_call data. An open RPC endpoint is used instead.

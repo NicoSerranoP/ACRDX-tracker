@@ -5,7 +5,13 @@ import ACRDX_ABI from "./abis/ACRDX.json" with { type: "json" };
 import USDC_VAULT_ABI from "./abis/USDCVault.json" with { type: "json" };
 import CHRONICLE_ORACLE_ABI from "./abis/ChronicleOracle.json" with { type: "json" };
 import { BlockResult, Network, Snapshot } from "./types.js";
-import { DAYS_TO_MONITOR, ONE_DAY_IN_BLOCKS, ONE_DAY_IN_SECONDS, USDC_CONTRACT_ADDRESSES } from "./constants.js";
+import {
+  ACRDX_CONTRACT_ADDRESSES,
+  DAYS_TO_MONITOR,
+  ONE_DAY_IN_BLOCKS,
+  ONE_DAY_IN_SECONDS,
+  USDC_CONTRACT_ADDRESSES,
+} from "./constants.js";
 
 loadEnvFile("./.env");
 
@@ -35,54 +41,34 @@ export default class Rpc {
     });
   }
 
-  async getTotalSupplyByBlocks(network: Network, address: Hex): Promise<Snapshot[]> {
+  async getDataByBlocks(network: Network): Promise<Snapshot[]> {
     const client = this.clients[network];
-    const blocks = await this.getBlockWindow(network);
 
-    const contract = getContract({
+    const acrdxAddress = ACRDX_CONTRACT_ADDRESSES[network];
+    const acrdxContract = getContract({
       client,
-      address,
+      address: acrdxAddress,
       abi: ACRDX_ABI,
     });
 
-    const promises = blocks.map(async (block) => {
-      const total = (await contract.read.totalSupply({ blockNumber: block })) as bigint;
-
-      return { block, shares: total };
-    });
-
-    return Promise.all(promises);
-  }
-
-  async getVaultAddress(network: Network, address: Hex, asset: Hex): Promise<Hex> {
-    const client = this.clients[network];
-
-    const contract = getContract({
-      client,
-      address,
-      abi: ACRDX_ABI,
-    });
-
-    return contract.read.vault([asset]) as Promise<Hex>;
-  }
-
-  async getPricePerShareFromVault(network: Network, vaultAddress: Hex, blockNumber?: bigint): Promise<bigint> {
-    const client = this.clients[network];
-
-    const contract = getContract({
+    const vaultAddress = (await acrdxContract.read.vault([USDC_CONTRACT_ADDRESSES[network]])) as Hex;
+    const vaultContract = getContract({
       client,
       address: vaultAddress,
       abi: USDC_VAULT_ABI,
     });
 
-    return contract.read.pricePerShare({ blockNumber }) as Promise<bigint>;
-  }
+    const blocks = await this.getBlockWindow(network);
 
-  async getPriceFromVault(network: Network, address: Hex, blockNumber?: bigint): Promise<bigint> {
-    const vault = await this.getVaultAddress(network, address, USDC_CONTRACT_ADDRESSES[network]);
-    const price = await this.getPricePerShareFromVault(network, vault, blockNumber);
+    const promises = blocks.map(async (block) => {
+      const totalSupply = (await acrdxContract.read.totalSupply({ blockNumber: block })) as bigint;
+      const pricePerShare = (await vaultContract.read.pricePerShare({ blockNumber: block })) as bigint;
+      const priceLastUpdated = (await vaultContract.read.priceLastUpdated({ blockNumber: block })) as bigint;
 
-    return price;
+      return { block, shares: totalSupply, pricePerShare, priceLastUpdated };
+    });
+
+    return Promise.all(promises);
   }
 
   async getPrice(network: Network, address: Hex, blockNumber?: bigint) {

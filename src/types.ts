@@ -9,6 +9,8 @@ export enum Network {
 export interface Snapshot {
   block: bigint;
   shares: bigint;
+  pricePerShare: bigint;
+  priceLastUpdated: bigint;
 }
 
 export interface Shares {

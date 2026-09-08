@@ -1,6 +1,6 @@
 import Rpc from "./rpc.js";
 import { Network, Shares } from "./types.js";
-import { ACRDX_CONTRACT_ADDRESSES, CHRONICLE_ORACLE_ADDRESS, DAYS_TO_MONITOR } from "./constants.js";
+import { CHRONICLE_ORACLE_ADDRESS, DAYS_TO_MONITOR } from "./constants.js";
 import { formatUnits } from "viem/utils";
 import saveAsJSONFile from "./file.js";
 
@@ -8,27 +8,12 @@ const main = async (): Promise<void> => {
   const start = Date.now();
   const rpc = new Rpc();
 
-  const [ethereumVaultPrice, optimismVaultPrice, monadVaultPrice, baseVaultPrice, plumeVaultPrice] = await Promise.all([
-    rpc.getPriceFromVault(Network.ETH, ACRDX_CONTRACT_ADDRESSES[Network.ETH]),
-    rpc.getPriceFromVault(Network.OP, ACRDX_CONTRACT_ADDRESSES[Network.OP]),
-    rpc.getPriceFromVault(Network.MONAD, ACRDX_CONTRACT_ADDRESSES[Network.MONAD]),
-    rpc.getPriceFromVault(Network.BASE, ACRDX_CONTRACT_ADDRESSES[Network.BASE]),
-    rpc.getPriceFromVault(Network.PLUME, ACRDX_CONTRACT_ADDRESSES[Network.PLUME]),
-  ]);
-
-  console.log("Oracle price in vault contract:");
-  console.log(ethereumVaultPrice);
-  console.log(optimismVaultPrice);
-  console.log(monadVaultPrice);
-  console.log(baseVaultPrice);
-  console.log(plumeVaultPrice);
-
   const [ethereum, optimism, monad, base, plume] = await Promise.all([
-    rpc.getTotalSupplyByBlocks(Network.ETH, ACRDX_CONTRACT_ADDRESSES[Network.ETH]),
-    rpc.getTotalSupplyByBlocks(Network.OP, ACRDX_CONTRACT_ADDRESSES[Network.OP]),
-    rpc.getTotalSupplyByBlocks(Network.MONAD, ACRDX_CONTRACT_ADDRESSES[Network.MONAD]),
-    rpc.getTotalSupplyByBlocks(Network.BASE, ACRDX_CONTRACT_ADDRESSES[Network.BASE]),
-    rpc.getTotalSupplyByBlocks(Network.PLUME, ACRDX_CONTRACT_ADDRESSES[Network.PLUME]),
+    rpc.getDataByBlocks(Network.ETH),
+    rpc.getDataByBlocks(Network.OP),
+    rpc.getDataByBlocks(Network.MONAD),
+    rpc.getDataByBlocks(Network.BASE),
+    rpc.getDataByBlocks(Network.PLUME),
   ]);
 
   const shares: Shares[] = [];
