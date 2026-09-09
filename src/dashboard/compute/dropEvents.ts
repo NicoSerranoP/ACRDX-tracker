@@ -27,7 +27,7 @@ export function computeDropEvents(data: Shares[], dropThresholdPct: number): Dro
         after: formatUnits18(after, 0),
         delta: `−${formatUnits18(before - after, 0)}`,
         pct: `${aggregatePct.toFixed(3)}%`,
-        severity: Math.abs(aggregatePct) > dropThresholdPct ? "ALERT" : "NOTICE",
+        severity: aggregatePct < -dropThresholdPct ? "ALERT" : "NOTICE",
       });
     });
   }

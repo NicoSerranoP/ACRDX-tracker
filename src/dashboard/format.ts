@@ -1,7 +1,11 @@
 const E18 = 10n ** 18n;
 
-export const shortAddress = (address: string): string =>
-  address && address.length > 14 ? `${address.slice(0, 8)}…${address.slice(-6)}` : address || "—";
+/** Truncates a hex address/hash to a short form; other labels (e.g. "Chronicle validators") pass through unchanged. */
+export const shortAddress = (address: string): string => {
+  if (!address) return "—";
+  const isHex = /^0x[0-9a-fA-F]+/.test(address);
+  return isHex && address.length > 14 ? `${address.slice(0, 8)}…${address.slice(-6)}` : address;
+};
 
 export const isoDate = (timestamp: number): string => new Date(timestamp * 1000).toISOString().slice(0, 10);
 
