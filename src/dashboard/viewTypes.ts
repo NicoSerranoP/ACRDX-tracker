@@ -32,6 +32,7 @@ export interface Kpi {
   color: "text" | "bad";
   linked: boolean;
   url: string;
+  verified: boolean;
 }
 
 export interface TopologyRow {
@@ -43,6 +44,7 @@ export interface TopologyRow {
   hasLink: boolean;
   value: string;
   selected: boolean;
+  verified: boolean;
 }
 
 export interface TopologyNetwork {

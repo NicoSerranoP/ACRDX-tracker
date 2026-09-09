@@ -1,6 +1,18 @@
-import { DIVIDER } from "../palette";
+import { DIVIDER, VERIFIED_INK } from "../palette";
 
-export default function Header({ snapshotDate, dayLabel }: { snapshotDate: string; dayLabel: string }) {
+export default function Header({
+  snapshotDate,
+  dayLabel,
+  onVerify,
+  verifying,
+  verifiedAt,
+}: {
+  snapshotDate: string;
+  dayLabel: string;
+  onVerify: () => void;
+  verifying: boolean;
+  verifiedAt: number | null;
+}) {
   return (
     <div
       style={{
@@ -28,6 +40,21 @@ export default function Header({ snapshotDate, dayLabel }: { snapshotDate: strin
           {snapshotDate}
         </div>
         <div style={{ fontSize: 11, color: "#7a7a7d" }}>day {dayLabel}</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
+          <button
+            className="btn btn-primary"
+            onClick={onVerify}
+            disabled={verifying}
+            style={{ fontSize: 11, letterSpacing: ".09em", textTransform: "uppercase", padding: "6px 12px" }}
+          >
+            {verifying ? "verifying…" : "verify now"}
+          </button>
+          {verifiedAt !== null && (
+            <div className="mono" style={{ fontSize: 10, color: VERIFIED_INK, whiteSpace: "nowrap" }}>
+              verified {new Date(verifiedAt).toISOString().slice(0, 19).replace("T", " ")} UTC
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

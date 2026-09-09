@@ -5,9 +5,9 @@ import { NETWORK_LIST, snapshotTimestamp } from "../networks";
 import type { Thresholds } from "../types";
 import type { ReconRow } from "../viewTypes";
 
-export function computeReconciliation(snapshot: Shares, thresholds: Thresholds): ReconRow[] {
+export function computeReconciliation(snapshot: Shares, thresholds: Thresholds, totalDays: number): ReconRow[] {
   const ethOracle = Number(formatUnits(snapshot.blockNumbers.ETH.oraclePrice, 18));
-  const timestamp = snapshotTimestamp(snapshot.day);
+  const timestamp = snapshotTimestamp(snapshot.day, totalDays);
 
   return NETWORK_LIST.map((network) => {
     const s = snapshot.blockNumbers[network.key];

@@ -2,6 +2,7 @@ import type { Selection } from "../types";
 import type { TopologyNetwork, TopologyRow } from "../viewTypes";
 import BlueprintCorners from "./BlueprintCorners";
 import SectionHeading from "./SectionHeading";
+import VerifiedIcon from "./VerifiedIcon";
 
 function TopologyRowItem({
   row,
@@ -43,8 +44,11 @@ function TopologyRowItem({
         <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, fontSize: 13, lineHeight: 1.15 }}>
           {row.title}
         </div>
-        <div className="mono num" style={{ fontSize: 12, fontWeight: 600, marginLeft: "auto" }}>
-          {row.value}
+        <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: "auto" }}>
+          <div className="mono num" style={{ fontSize: 12, fontWeight: 600 }}>
+            {row.value}
+          </div>
+          {row.verified && <VerifiedIcon size={11} />}
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>

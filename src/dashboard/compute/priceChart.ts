@@ -24,7 +24,7 @@ const ethPrices = (data: Shares[]): PricePair[] =>
   });
 
 export function computePriceChart(data: Shares[]): PriceChartData {
-  const step = chartStep();
+  const step = chartStep(data.length);
   const prices = ethPrices(data);
   const values = prices.flatMap((p) => [p.oracle, p.vault]);
   const lo = Math.min(...values);

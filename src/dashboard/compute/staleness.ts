@@ -6,11 +6,12 @@ import type { StaleCell, StaleRow } from "../viewTypes";
 export function computeStalenessMatrix(data: Shares[], stalenessHours: number): StaleRow[] {
   return NETWORK_LIST.map((network) => {
     const cells: StaleCell[] = data.map((entry) => {
-      const ageHours = (snapshotTimestamp(entry.day) - Number(entry.blockNumbers[network.key].priceLastUpdated)) / 3600;
+      const ageHours =
+        (snapshotTimestamp(entry.day, data.length) - Number(entry.blockNumbers[network.key].priceLastUpdated)) / 3600;
       const level = ageHours > stalenessHours * 2 ? "stale" : ageHours > stalenessHours ? "warn" : "fresh";
       return {
         fill: level,
-        tip: `${network.label} · ${isoDate(snapshotTimestamp(entry.day))} · price age ${ageHours.toFixed(0)}h`,
+        tip: `${network.label} · ${isoDate(snapshotTimestamp(entry.day, data.length))} · price age ${ageHours.toFixed(0)}h`,
         day: entry.day,
       };
     });

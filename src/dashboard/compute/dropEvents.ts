@@ -4,8 +4,9 @@ import { formatUnits18, isoDate } from "../format";
 import { NETWORK_LIST, snapshotTimestamp } from "../networks";
 import type { DropEvent } from "../viewTypes";
 
-/** Flags a per-network supply decrease between consecutive snapshots, severity set by the
- *  same-day aggregate percentage drop across all chains. */
+/** Flags a per-network supply decrease between consecutive snapshots, severity ALERT when the
+ *  same-day aggregate also fell by more than dropThresholdPct (an aggregate increase, even a
+ *  large one, is never a "drop" and stays NOTICE). */
 export function computeDropEvents(data: Shares[], dropThresholdPct: number): DropEvent[] {
   const events: DropEvent[] = [];
 
@@ -21,7 +22,7 @@ export function computeDropEvents(data: Shares[], dropThresholdPct: number): Dro
 
       events.push({
         day: data[i].day,
-        date: isoDate(snapshotTimestamp(data[i].day)),
+        date: isoDate(snapshotTimestamp(data[i].day, data.length)),
         network: network.label,
         networkKey: network.key,
         before: formatUnits18(before, 0),

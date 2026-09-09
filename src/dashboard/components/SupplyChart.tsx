@@ -143,7 +143,7 @@ export default function SupplyChart({ bars, gridY, xTicks, dropMarks, cursorX, o
                 <line x1={m.x} y1={0} x2={m.x} y2={CHART_HEIGHT} stroke={RED} strokeWidth={1} strokeDasharray="3 3" />
                 <text
                   x={m.x - 6}
-                  y={14}
+                  y={8}
                   fontSize={10}
                   fill={RED_INK}
                   fontFamily="ui-monospace, monospace"

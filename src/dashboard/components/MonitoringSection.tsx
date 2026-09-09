@@ -1,5 +1,4 @@
 import type { Network } from "../../types";
-import { cursorX } from "../compute/chartLayout";
 import type { PriceChartData } from "../compute/priceChart";
 import type { Selection, Thresholds } from "../types";
 import type { AxisTick, CheckResult, DropEvent, ReconRow, StaleRow, SupplyBar } from "../viewTypes";
@@ -12,7 +11,7 @@ import StalenessMatrix from "./StalenessMatrix";
 import SupplyChart from "./SupplyChart";
 
 export interface MonitoringSectionProps {
-  day: number;
+  cursorX: number;
   snapshotDate: string;
   thresholds: Thresholds;
   checks: CheckResult[];
@@ -29,7 +28,7 @@ export interface MonitoringSectionProps {
 
 export default function MonitoringSection(props: MonitoringSectionProps) {
   const {
-    day,
+    cursorX: cursor,
     snapshotDate,
     thresholds,
     checks,
@@ -43,7 +42,6 @@ export default function MonitoringSection(props: MonitoringSectionProps) {
     staleRows,
     onInspect,
   } = props;
-  const cursor = cursorX(day);
   const selectDay = (network: Network, targetDay: number) => onInspect({ network, kind: "token" }, targetDay);
   const selectVaultDay = (network: Network, targetDay: number) => onInspect({ network, kind: "vault" }, targetDay);
 

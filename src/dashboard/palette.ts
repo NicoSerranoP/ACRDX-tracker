@@ -8,6 +8,7 @@ export const ACCENT_INK = "#1d2d3d";
 export const ACCENT_TAG_BG = "#eef6ff";
 export const ACCENT_TAG_FG = "#2c455d";
 export const STALE_FRESH = "#d6ebff";
+export const VERIFIED_INK = "#2f6b46";
 
 export const RED = "oklch(.52 .14 27)";
 export const RED_INK = "oklch(.42 .14 27)";

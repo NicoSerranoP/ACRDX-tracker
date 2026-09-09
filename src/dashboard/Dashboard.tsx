@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { DAYS_TO_MONITOR } from "../constants";
 import { Network } from "../types";
 import { defaultBlockRange, type BlockRange } from "./compute/transactions";
@@ -20,14 +20,33 @@ import { snapshotTimestamp } from "./networks";
 
 const NETWORK_KEYS = Object.values(Network);
 const INITIAL_SELECTION: Selection = { network: Network.PLUME, kind: "token" };
-const DAYS = Number(DAYS_TO_MONITOR);
+/** Only used before the real snapshot count is known (i.e. before shares.json has loaded). */
+const FALLBACK_DAYS = Number(DAYS_TO_MONITOR);
 
 export default function Dashboard() {
-  const { data, error } = useShareHistory();
-  const [day, setDay] = useState(DAYS);
+  const { data, error, verifying, verifiedAt, verify } = useShareHistory();
+  const [day, setDay] = useState(FALLBACK_DAYS);
   const [selection, setSelection] = useState<Selection>(INITIAL_SELECTION);
   const [useManualRange, setUseManualRange] = useState(true);
   const [manualRange, setManualRange] = useState<BlockRange>({ from: "", to: "" });
+  const verified = !!verifiedAt && !error;
+
+  // Once the real snapshot history loads, jump to its actual latest day — the fallback above
+  // is just a placeholder and shouldn't be trusted as "the last day" once real data arrives.
+  // On every later data change (e.g. a verify() refetch) just clamp day back in range instead,
+  // so a shrinking snapshot count can't leave day pointing past the end of the array.
+  const dayInitialized = useRef(false);
+  useEffect(() => {
+    if (!data) return;
+    if (!dayInitialized.current) {
+      dayInitialized.current = true;
+      setDay(data.length);
+      return;
+    }
+    setDay((current) => Math.min(current, data.length));
+  }, [data]);
+
+  const totalDays = data ? data.length : FALLBACK_DAYS;
 
   const ledger = useMemo(() => (data ? buildLedger(data, NETWORK_KEYS) : {}), [data]);
 
@@ -69,8 +88,14 @@ export default function Dashboard() {
         padding: "0 0 60px",
       }}
     >
-      <Header snapshotDate={data ? isoDate(snapshotTimestamp(day)) : "—"} dayLabel={`${day} / ${DAYS}`} />
-      <Timeline day={day} onDay={setDay} />
+      <Header
+        snapshotDate={data ? isoDate(snapshotTimestamp(day, totalDays)) : "—"}
+        dayLabel={`${day} / ${totalDays}`}
+        onVerify={verify}
+        verifying={verifying}
+        verifiedAt={verifiedAt}
+      />
+      <Timeline day={day} totalDays={totalDays} onDay={setDay} />
 
       {error && <ErrorBanner message={error} />}
 
@@ -78,6 +103,7 @@ export default function Dashboard() {
         <DashboardBody
           data={data}
           day={day}
+          verified={verified}
           selection={selection}
           range={useManualRange ? manualRange : defaultBlockRange(data, day, selection)}
           ledger={ledger}
@@ -96,6 +122,7 @@ export default function Dashboard() {
 interface DashboardBodyProps {
   data: NonNullable<ReturnType<typeof useShareHistory>["data"]>;
   day: number;
+  verified: boolean;
   selection: Selection;
   range: BlockRange;
   ledger: ReturnType<typeof buildLedger>;
@@ -111,6 +138,7 @@ function DashboardBody(props: DashboardBodyProps) {
   const {
     data,
     day,
+    verified,
     selection,
     range,
     ledger,
@@ -121,7 +149,7 @@ function DashboardBody(props: DashboardBodyProps) {
     onSyncRange,
     onClearRange,
   } = props;
-  const vm = buildViewModel(data, ledger, { day, selection, range }, DEFAULT_THRESHOLDS);
+  const vm = buildViewModel(data, ledger, { day, selection, range, verified }, DEFAULT_THRESHOLDS);
   const contract = selectedContract(selection);
 
   return (
@@ -129,8 +157,8 @@ function DashboardBody(props: DashboardBodyProps) {
       <KpiStrip kpis={vm.kpis} />
       <TopologySection topology={vm.topology} onSelect={onSelectContract} />
       <MonitoringSection
-        day={day}
-        snapshotDate={isoDate(snapshotTimestamp(day))}
+        cursorX={vm.cursorX}
+        snapshotDate={isoDate(snapshotTimestamp(day, data.length))}
         thresholds={vm.thresholds}
         checks={vm.checks}
         recon={vm.recon}
