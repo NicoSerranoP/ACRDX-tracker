@@ -62,9 +62,9 @@ export default function Dashboard() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#f2f2f3",
-        color: "#1d1f20",
-        fontFamily: "Barlow, system-ui, sans-serif",
+        background: "var(--color-bg)",
+        color: "var(--color-text)",
+        fontFamily: "var(--font-body)",
         fontSize: 13,
         padding: "0 0 60px",
       }}

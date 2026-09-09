@@ -1,3 +1,4 @@
+import { formatUnits } from "viem";
 import type { Shares } from "../../types";
 import { formatUnits18, isoDate } from "../format";
 import { NETWORK_LIST, snapshotTimestamp } from "../networks";
@@ -9,8 +10,8 @@ export function computeDropEvents(data: Shares[], dropThresholdPct: number): Dro
   const events: DropEvent[] = [];
 
   for (let i = 1; i < data.length; i++) {
-    const prevTotal = Number(data[i - 1].total) / 1e18;
-    const curTotal = Number(data[i].total) / 1e18;
+    const prevTotal = Number(formatUnits(data[i - 1].total, 18));
+    const curTotal = Number(formatUnits(data[i].total, 18));
     const aggregatePct = ((curTotal - prevTotal) / prevTotal) * 100;
 
     NETWORK_LIST.forEach((network) => {
