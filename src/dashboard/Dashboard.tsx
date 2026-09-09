@@ -33,12 +33,17 @@ export default function Dashboard() {
 
   // Once the real snapshot history loads, jump to its actual latest day — the fallback above
   // is just a placeholder and shouldn't be trusted as "the last day" once real data arrives.
+  // On every later data change (e.g. a verify() refetch) just clamp day back in range instead,
+  // so a shrinking snapshot count can't leave day pointing past the end of the array.
   const dayInitialized = useRef(false);
   useEffect(() => {
-    if (data && !dayInitialized.current) {
+    if (!data) return;
+    if (!dayInitialized.current) {
       dayInitialized.current = true;
       setDay(data.length);
+      return;
     }
+    setDay((current) => Math.min(current, data.length));
   }, [data]);
 
   const totalDays = data ? data.length : FALLBACK_DAYS;

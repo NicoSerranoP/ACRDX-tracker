@@ -49,7 +49,9 @@ export function useShareHistory(): ShareHistoryState {
         if (markVerified) setVerifiedAt(Date.now());
       })
       .catch((err: Error) => {
-        setData(null);
+        // A failed manual verify shouldn't blank out an already-loaded dashboard — only the
+        // initial load has no prior data to fall back on.
+        if (!markVerified) setData(null);
         setError(err.message);
         if (markVerified) setVerifiedAt(null);
       })

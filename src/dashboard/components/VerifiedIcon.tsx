@@ -14,6 +14,8 @@ export default function VerifiedIcon({ size }: { size: number }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       style={{ flex: "none" }}
+      aria-hidden="true"
+      focusable="false"
     >
       <polyline points="20 6 9 17 4 12" />
     </svg>

@@ -51,7 +51,7 @@ export default function Header({
           </button>
           {verifiedAt !== null && (
             <div className="mono" style={{ fontSize: 10, color: VERIFIED_INK, whiteSpace: "nowrap" }}>
-              verified {new Date(verifiedAt).toISOString().slice(11, 19)} UTC
+              verified {new Date(verifiedAt).toISOString().slice(0, 19).replace("T", " ")} UTC
             </div>
           )}
         </div>
