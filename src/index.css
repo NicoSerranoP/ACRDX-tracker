@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap");
+/* Fonts are loaded via <link> tags in index.html (non-render-blocking, CSP-friendly) rather than a CSS @import. */
 @import "./styles/industry.css";
 
 body {

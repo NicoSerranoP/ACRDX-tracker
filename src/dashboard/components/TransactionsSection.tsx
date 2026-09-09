@@ -21,6 +21,11 @@ export interface TransactionsSectionProps {
 const rowTagColors = (event: string) =>
   event === "Burn" ? tagColors(true) : { bg: event === "Mint" ? "#d6ebff" : "#f5f5f8", fg: "#2c455d" };
 
+const emptyStateMessage = (range: BlockRange): string => {
+  if (!range.from && !range.to) return "No transactions for this contract.";
+  return `No transactions for this contract inside blocks ${range.from || "0"}–${range.to || "latest"}.`;
+};
+
 export default function TransactionsSection(props: TransactionsSectionProps) {
   const {
     selectedTitle,
@@ -137,7 +142,7 @@ export default function TransactionsSection(props: TransactionsSectionProps) {
             marginTop: 8,
           }}
         >
-          No transactions for this contract inside blocks {range.from}–{range.to}.
+          {emptyStateMessage(range)}
         </div>
       )}
       <div style={{ fontSize: 11, color: "#7a7a7d", lineHeight: 1.5, maxWidth: 900, marginTop: 10 }}>

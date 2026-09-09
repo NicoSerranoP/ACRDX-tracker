@@ -116,6 +116,15 @@ export default function SupplyChart({ bars, gridY, xTicks, dropMarks, cursorX, o
                 height={b.h}
                 fill={b.fill}
                 onClick={() => onSelectBar(b.network, b.day)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onSelectBar(b.network, b.day);
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={b.tip}
                 style={{ cursor: "pointer" }}
               >
                 <title>{b.tip}</title>

@@ -21,6 +21,7 @@ export default function Timeline({ day, onDay }: { day: number; onDay: (day: num
       </div>
       <input
         type="range"
+        aria-label="Snapshot day"
         min={1}
         max={DAYS}
         step={1}
