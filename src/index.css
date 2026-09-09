@@ -1,0 +1,30 @@
+/* Fonts are loaded via <link> tags in index.html (non-render-blocking, CSP-friendly) rather than a CSS @import. */
+@import "./styles/industry.css";
+
+body {
+  margin: 0;
+  background: #f2f2f3;
+}
+
+a {
+  color: #416180;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1d2d3d;
+  text-decoration: underline;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  accent-color: #5980a6;
+}
