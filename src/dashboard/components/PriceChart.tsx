@@ -1,5 +1,5 @@
 import type { PriceChartData } from "../compute/priceChart";
-import { CHART_VIEWBOX_HEIGHT } from "../compute/chartLayout";
+import { CHART_VIEWBOX_HEIGHT, CHART_WIDTH, CURSOR_LINE_HEIGHT } from "../compute/chartLayout";
 
 export default function PriceChart({ chart, cursorX }: { chart: PriceChartData; cursorX: number }) {
   return (
@@ -45,7 +45,7 @@ export default function PriceChart({ chart, cursorX }: { chart: PriceChartData; 
         </div>
         <div>
           <svg
-            viewBox={`0 0 1000 ${CHART_VIEWBOX_HEIGHT}`}
+            viewBox={`0 0 ${CHART_WIDTH} ${CHART_VIEWBOX_HEIGHT}`}
             preserveAspectRatio="none"
             style={{ width: "100%", height: 170, display: "block", overflow: "visible" }}
           >
@@ -65,7 +65,7 @@ export default function PriceChart({ chart, cursorX }: { chart: PriceChartData; 
               strokeDasharray="4 3"
               vectorEffect="non-scaling-stroke"
             />
-            <line x1={cursorX} y1={0} x2={cursorX} y2={206} stroke="#1d1f20" strokeWidth={1} />
+            <line x1={cursorX} y1={0} x2={cursorX} y2={CURSOR_LINE_HEIGHT} stroke="#1d1f20" strokeWidth={1} />
           </svg>
           <div style={{ display: "flex", gap: 14, fontSize: 11, color: "#5d5d60", paddingTop: 6 }}>
             <span>

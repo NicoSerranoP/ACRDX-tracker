@@ -1,7 +1,7 @@
 import type { Network } from "../../types";
 import { RED, RED_INK } from "../palette";
 import { NETWORKS } from "../networks";
-import { CHART_VIEWBOX_HEIGHT } from "../compute/chartLayout";
+import { CHART_HEIGHT, CHART_VIEWBOX_HEIGHT, CHART_WIDTH, CURSOR_LINE_HEIGHT } from "../compute/chartLayout";
 import type { AxisTick, SupplyBar } from "../viewTypes";
 
 interface SupplyChartProps {
@@ -100,12 +100,20 @@ export default function SupplyChart({ bars, gridY, xTicks, dropMarks, cursorX, o
         </div>
         <div>
           <svg
-            viewBox={`0 0 1000 ${CHART_VIEWBOX_HEIGHT}`}
+            viewBox={`0 0 ${CHART_WIDTH} ${CHART_VIEWBOX_HEIGHT}`}
             preserveAspectRatio="none"
             style={{ width: "100%", height: 190, display: "block", overflow: "visible" }}
           >
             {gridY.map((g) => (
-              <line key={g.label} x1={0} y1={g.y} x2={1000} y2={g.y} stroke="rgba(29,31,32,.12)" strokeWidth={1} />
+              <line
+                key={g.label}
+                x1={0}
+                y1={g.y}
+                x2={CHART_WIDTH}
+                y2={g.y}
+                stroke="rgba(29,31,32,.12)"
+                strokeWidth={1}
+              />
             ))}
             {bars.map((b, i) => (
               <rect
@@ -132,7 +140,7 @@ export default function SupplyChart({ bars, gridY, xTicks, dropMarks, cursorX, o
             ))}
             {dropMarks.map((m, i) => (
               <g key={i}>
-                <line x1={m.x} y1={0} x2={m.x} y2={200} stroke={RED} strokeWidth={1} strokeDasharray="3 3" />
+                <line x1={m.x} y1={0} x2={m.x} y2={CHART_HEIGHT} stroke={RED} strokeWidth={1} strokeDasharray="3 3" />
                 <text
                   x={m.x - 6}
                   y={14}
@@ -145,7 +153,7 @@ export default function SupplyChart({ bars, gridY, xTicks, dropMarks, cursorX, o
                 </text>
               </g>
             ))}
-            <line x1={cursorX} y1={0} x2={cursorX} y2={206} stroke="#1d1f20" strokeWidth={1} />
+            <line x1={cursorX} y1={0} x2={cursorX} y2={CURSOR_LINE_HEIGHT} stroke="#1d1f20" strokeWidth={1} />
           </svg>
           <div style={{ display: "grid", gridTemplateColumns: `repeat(${xTicks.length}, 1fr)`, marginTop: 4 }}>
             {xTicks.map((t, i) => (
