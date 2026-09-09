@@ -60,7 +60,7 @@ export default function App() {
           </tr>
         </thead>
         <tbody>
-          {data.slice(0, 10).map((entry) => (
+          {data.map((entry) => (
             <tr key={entry.day}>
               <td style={{ border: "1px solid #ddd", padding: "0.5rem" }}>{entry.day}</td>
               <td style={{ border: "1px solid #ddd", padding: "0.5rem" }}>{entry.total}</td>
