@@ -12,7 +12,7 @@ import {
   ONE_DAY_IN_BLOCKS,
   ONE_DAY_IN_SECONDS,
   USDC_CONTRACT_ADDRESSES,
-} from "./constants.js";
+} from "../constants.js";
 
 loadEnvFile("./.env");
 
@@ -23,7 +23,7 @@ export default class Rpc {
     this.clients = {} as Record<Network, PublicClient>;
 
     Object.values(Network).forEach((network) => {
-      const envRPCUrl = process.env[`${network}_RPC_URL`];
+      const envRPCUrl = process.env[`VITE_${network}_RPC_URL`];
 
       if (!envRPCUrl) {
         throw new Error(`RPC URL for ${network} is not defined in the env variables.`);

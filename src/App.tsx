@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useFetchOnChainData } from "./utils/fetch-data";
 
 type NetworkKey = "ETH" | "OP" | "MONAD" | "BASE" | "PLUME";
 
@@ -21,6 +22,8 @@ export default function App() {
   const [data, setData] = useState<ShareEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const { fetchData } = useFetchOnChainData();
 
   useEffect(() => {
     fetch("/shares.json")
@@ -46,6 +49,8 @@ export default function App() {
   return (
     <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
       <h1>Shares data</h1>
+
+      <button onClick={fetchData}>Fetch On-Chain Data</button>
 
       <table style={{ borderCollapse: "collapse", width: "100%", maxWidth: 1200 }}>
         <thead>

@@ -37,7 +37,12 @@ All this information was fetched on September 7th 2026
    - ACRDX was launched using Centrifuge intrastructure and in the Plume blockchain (the other networks are not mentioned)
    - Grove committed $50M to ACRDX at the beginning. The 12M and 17M burned tokens belonged to AMLProxy (part of Grove/Sky - Atlas framework)
 
-4. [Typescript monitoring tool](../README.md): shows
+4. [Financial Sky Ecosystem Dashboard](https://financial.skyeco.com/primes/grove/allocations/0x9477724bb54ad5417de8baff29e59df3fb4da74f?wallet_address=0x1db91ad50446a671e2231f77e00948e68876f812&network=plume&tab=events)
+
+5. [Grove AMLProxy Ethereum address](https://etherscan.io/address/0x491edfb0b8b608044e227225c715981a30f3a44e):
+   - Received $12,263,706.477 on August 10th in Ethereum mainnet from a Coinbase Prime 1 address. [Tx details here](https://etherscan.io/tx/0x66cb3d9d68010cfeb6e1949215dbea5cc18a21c0e3e6be94321272230c70f899). If you multiply that day oracle price $1.020232 by the number of burned tokens 12,020,502 you get $12,263,700.79 which has a $6.32 difference with the paid amount in USDC
+
+6. [Typescript monitoring tool](../README.md): shows
    - for exact daily monitoring, the script takes around ~5 minutes to finish.
    - `shares.json` (ETH block number: 25722135) shows the Plume burn incident. $42M before, $30M after.
    - `shares.json` (ETH block number: 25722135) shows another burn in Ethereum. 378,869 tokens before, 261,058 after. 117,810 burned tokens.

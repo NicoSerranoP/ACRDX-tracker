@@ -1,8 +1,8 @@
 import Rpc from "./rpc.js";
 import { Network, Shares } from "../types.js";
-import { CHRONICLE_ORACLE_ADDRESS, DAYS_TO_MONITOR } from "./constants.js";
 import { formatUnits } from "viem/utils";
 import saveAsJSONFile from "./file.js";
+import { CHRONICLE_ORACLE_ADDRESS, DAYS_TO_MONITOR } from "../constants.js";
 
 const main = async (): Promise<void> => {
   const start = Date.now();
@@ -34,7 +34,7 @@ const main = async (): Promise<void> => {
     });
   }
 
-  await saveAsJSONFile("../../public/shares.json", shares);
+  await saveAsJSONFile("shares.json", shares);
 
   const oraclePrice = await rpc.getPrice(Network.ETH, CHRONICLE_ORACLE_ADDRESS);
   const formattedOraclePrice = Number(formatUnits(oraclePrice, 18)).toFixed(6);
