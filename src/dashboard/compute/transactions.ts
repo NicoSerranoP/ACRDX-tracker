@@ -28,11 +28,16 @@ function parseBound(value: string, unbounded: number): number {
   return Number.isNaN(parsed) ? unbounded : parsed;
 }
 
-export function computeTransactions(params: { ledger: Ledger; selection: Selection; range: BlockRange }): {
+export function computeTransactions(params: {
+  ledger: Ledger;
+  selection: Selection;
+  range: BlockRange;
+  totalDays: number;
+}): {
   rows: TxRow[];
   totalCount: number;
 } {
-  const { ledger, selection, range } = params;
+  const { ledger, selection, range, totalDays } = params;
   const network = NETWORKS[selection.network];
   const lo = parseBound(range.from, -Infinity);
   const hi = parseBound(range.to, Infinity);
@@ -43,7 +48,7 @@ export function computeTransactions(params: { ledger: Ledger; selection: Selecti
     .sort((a, b) => b.block - a.block)
     .map((t) => ({
       block: groupNumber(t.block),
-      date: isoDate(snapshotTimestamp(t.day)),
+      date: isoDate(snapshotTimestamp(t.day, totalDays)),
       event: t.event,
       amount: t.amount,
       from: shortAddress(t.from),

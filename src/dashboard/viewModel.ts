@@ -1,4 +1,5 @@
 import type { Shares } from "../types";
+import { cursorX } from "./compute/chartLayout";
 import { computeChecks } from "./compute/checks";
 import { computeDropEvents } from "./compute/dropEvents";
 import { computeKpis } from "./compute/kpis";
@@ -31,6 +32,7 @@ export interface UIState {
   day: number;
   selection: Selection;
   range: BlockRange;
+  verified: boolean;
 }
 
 export interface DashboardViewModel {
@@ -48,6 +50,7 @@ export interface DashboardViewModel {
   dropEvents: DropEvent[];
   priceChart: PriceChartData;
   staleRows: StaleRow[];
+  cursorX: number;
   txRows: TxRow[];
   txTotalCount: number;
   range: BlockRange;
@@ -62,15 +65,16 @@ export function buildViewModel(
 ): DashboardViewModel {
   const day = Math.min(Math.max(ui.day, 1), data.length);
   const snapshot = data[day - 1];
-  const recon = computeReconciliation(snapshot, thresholds);
+  const recon = computeReconciliation(snapshot, thresholds, data.length);
   const dropEvents = computeDropEvents(data, thresholds.dropThresholdPct);
   const checks = computeChecks({ snapshot, day, recon, dropEvents, thresholds });
-  const kpis = computeKpis({ snapshot, recon, checks, thresholds });
+  const kpis = computeKpis({ snapshot, recon, checks, thresholds, verified: ui.verified });
   const maxTotal = maxAggregateSupply(data);
   const { rows: txRows, totalCount: txTotalCount } = computeTransactions({
     ledger,
     selection: ui.selection,
     range: ui.range,
+    totalDays: data.length,
   });
 
   return {
@@ -80,14 +84,15 @@ export function buildViewModel(
     kpis,
     checks,
     recon,
-    topology: computeTopology(snapshot.blockNumbers, ui.selection),
+    topology: computeTopology(snapshot.blockNumbers, ui.selection, ui.verified),
     supplyBars: computeSupplyBars(data, maxTotal),
     supplyGridY: computeSupplyGridY(maxTotal),
     xTicks: computeXTicks(data),
-    dropMarks: computeDropMarks(dropEvents),
+    dropMarks: computeDropMarks(dropEvents, data.length),
     dropEvents,
     priceChart: computePriceChart(data),
     staleRows: computeStalenessMatrix(data, thresholds.stalenessHours),
+    cursorX: cursorX(day, data.length),
     txRows,
     txTotalCount,
     range: ui.range,

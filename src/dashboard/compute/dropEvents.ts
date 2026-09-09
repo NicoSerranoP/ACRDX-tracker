@@ -21,14 +21,14 @@ export function computeDropEvents(data: Shares[], dropThresholdPct: number): Dro
 
       events.push({
         day: data[i].day,
-        date: isoDate(snapshotTimestamp(data[i].day)),
+        date: isoDate(snapshotTimestamp(data[i].day, data.length)),
         network: network.label,
         networkKey: network.key,
         before: formatUnits18(before, 0),
         after: formatUnits18(after, 0),
         delta: `−${formatUnits18(before - after, 0)}`,
         pct: `${aggregatePct.toFixed(3)}%`,
-        severity: aggregatePct < -dropThresholdPct ? "ALERT" : "NOTICE",
+        severity: Math.abs(aggregatePct) > dropThresholdPct ? "ALERT" : "NOTICE",
       });
     });
   }

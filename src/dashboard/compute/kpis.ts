@@ -12,8 +12,9 @@ export function computeKpis(params: {
   recon: ReconRow[];
   checks: CheckResult[];
   thresholds: Thresholds;
+  verified: boolean;
 }): Kpi[] {
-  const { snapshot, recon, checks, thresholds } = params;
+  const { snapshot, recon, checks, thresholds, verified } = params;
   const ethSnapshot = snapshot.blockNumbers[Network.ETH];
   const ethOracle = Number(formatUnits(ethSnapshot.oraclePrice, 18));
   const sharePrice = ethOracle || Number(ethSnapshot.pricePerShare) / 1e6;
@@ -30,6 +31,7 @@ export function computeKpis(params: {
       color: "text",
       linked: false,
       url: "",
+      verified,
     },
     {
       label: "Share price",
@@ -38,6 +40,7 @@ export function computeKpis(params: {
       color: "text",
       linked: true,
       url: `${explorer}/address/${CHRONICLE_ORACLE_ADDRESS}#readContract#F9`,
+      verified,
     },
     {
       label: "Net asset value",
@@ -46,6 +49,7 @@ export function computeKpis(params: {
       color: "text",
       linked: false,
       url: "",
+      verified,
     },
     {
       label: "Oldest price",
@@ -54,6 +58,7 @@ export function computeKpis(params: {
       color: maxAge > thresholds.stalenessHours ? "bad" : "text",
       linked: false,
       url: "",
+      verified,
     },
     {
       label: "Checks breaching",
@@ -62,6 +67,7 @@ export function computeKpis(params: {
       color: failCount ? "bad" : "text",
       linked: false,
       url: "",
+      verified: false,
     },
   ];
 }

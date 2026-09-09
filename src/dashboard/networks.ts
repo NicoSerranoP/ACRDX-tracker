@@ -1,4 +1,3 @@
-import { DAYS_TO_MONITOR } from "../constants";
 import { Network } from "../types";
 
 export interface NetworkMeta {
@@ -60,8 +59,11 @@ export const NETWORK_LIST: NetworkMeta[] = Object.values(NETWORKS);
 /** Collection time of the sampled `shares.json` snapshot grid: 2026-09-07T12:00:00Z. */
 export const ANCHOR_TIMESTAMP = 1788782400;
 
-/** Unix timestamp represented by a given snapshot day (1..DAYS_TO_MONITOR) on the sampling grid. */
-export const snapshotTimestamp = (day: number): number => ANCHOR_TIMESTAMP - (Number(DAYS_TO_MONITOR) - day) * 86400;
+/** Unix timestamp represented by a given snapshot day (1..totalDays) on the sampling grid.
+ *  totalDays must be the actual number of snapshots (data.length) so dates stay correct
+ *  even if the configured collection window (VITE_DAYS_TO_MONITOR) drifts from what's on disk. */
+export const snapshotTimestamp = (day: number, totalDays: number): number =>
+  ANCHOR_TIMESTAMP - (totalDays - day) * 86400;
 
 /** Day of the Plume burn incident (~10 Aug 2026) — the "burn day" timeline jump target. */
 export const INCIDENT_DAY = 17;

@@ -38,7 +38,7 @@ function contractValue(kind: ContractKind, s: Snapshot): string {
   return (ownOracle > 0 ? ownOracle : Number(s.pricePerShare) / 1e6).toFixed(6);
 }
 
-function topologyRows(network: NetworkMeta, s: Snapshot, selection: Selection): TopologyRow[] {
+function topologyRows(network: NetworkMeta, s: Snapshot, selection: Selection, verified: boolean): TopologyRow[] {
   return (["oracle", "token", "vault"] as ContractKind[]).map((kind) => {
     const info = contractInfo(network, kind);
     return {
@@ -50,6 +50,7 @@ function topologyRows(network: NetworkMeta, s: Snapshot, selection: Selection): 
       addrShort: info.addr ? shortAddress(info.addr) : "via vault(USDC)",
       value: contractValue(kind, s),
       selected: selection.network === network.key && selection.kind === kind,
+      verified,
     };
   });
 }
@@ -73,7 +74,11 @@ export function selectedContract(selection: Selection): SelectedContract {
   };
 }
 
-export function computeTopology(blockNumbers: Record<Network, Snapshot>, selection: Selection): TopologyNetwork[] {
+export function computeTopology(
+  blockNumbers: Record<Network, Snapshot>,
+  selection: Selection,
+  verified: boolean,
+): TopologyNetwork[] {
   return NETWORK_LIST.map((network) => {
     const s = blockNumbers[network.key];
     return {
@@ -82,7 +87,7 @@ export function computeTopology(blockNumbers: Record<Network, Snapshot>, selecti
       fill: network.fill,
       ink: network.ink,
       block: groupNumber(Number(s.block)),
-      rows: topologyRows(network, s, selection),
+      rows: topologyRows(network, s, selection, verified),
     };
   });
 }

@@ -8,26 +8,29 @@ import { CHART_HEIGHT, CHART_VIEWBOX_HEIGHT, chartStep } from "./chartLayout";
 export const maxAggregateSupply = (data: Shares[]): number =>
   Math.max(...data.map((e) => Number(formatUnits(e.total, 18)))) * 1.08;
 
+/** Segments below this height get bumped up to it so all 5 networks stay legible even when
+ *  one chain's supply is a tiny fraction of the aggregate (e.g. Ethereum/Optimism vs Plume). */
+const MIN_VISIBLE_SEGMENT_HEIGHT = 2.5;
+
 export function computeSupplyBars(data: Shares[], maxTotal: number): SupplyBar[] {
-  const step = chartStep();
+  const step = chartStep(data.length);
   const barWidth = step - 2.2;
   const bars: SupplyBar[] = [];
 
   data.forEach((entry, i) => {
-    let acc = 0;
+    let y = CHART_HEIGHT;
     NETWORK_LIST.forEach((network) => {
       const value = Number(formatUnits(entry.blockNumbers[network.key].shares, 18));
       if (value <= 0) return;
-      const height = (value / maxTotal) * CHART_HEIGHT;
-      const y = CHART_HEIGHT - (acc / maxTotal) * CHART_HEIGHT - height;
-      acc += value;
+      const height = Math.max((value / maxTotal) * CHART_HEIGHT, MIN_VISIBLE_SEGMENT_HEIGHT);
+      y -= height;
       bars.push({
         x: i * step + 1.1,
         y,
         w: barWidth,
-        h: Math.max(height, 0.4),
+        h: height,
         fill: network.fill,
-        tip: `${network.label} · ${isoDate(snapshotTimestamp(entry.day))} · ${groupNumber(value)} ACRDX`,
+        tip: `${network.label} · ${isoDate(snapshotTimestamp(entry.day, data.length))} · ${groupNumber(value)} ACRDX`,
         network: network.key,
         day: entry.day,
       });
@@ -46,11 +49,11 @@ export function computeSupplyGridY(maxTotal: number): AxisTick[] {
 
 export const computeXTicks = (data: Shares[]): { label: string }[] =>
   data.map((entry, i) => ({
-    label: i % 3 === 0 || i === data.length - 1 ? dayMonth(snapshotTimestamp(entry.day)) : "",
+    label: i % 3 === 0 || i === data.length - 1 ? dayMonth(snapshotTimestamp(entry.day, data.length)) : "",
   }));
 
-export function computeDropMarks(dropEvents: DropEvent[]): { x: number; label: string }[] {
-  const step = chartStep();
+export function computeDropMarks(dropEvents: DropEvent[], totalDays: number): { x: number; label: string }[] {
+  const step = chartStep(totalDays);
   return dropEvents
     .filter((e) => e.severity === "ALERT")
     .map((e) => ({ x: (e.day - 1) * step + step / 2, label: e.pct }));
