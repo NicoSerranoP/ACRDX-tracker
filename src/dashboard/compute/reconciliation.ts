@@ -1,17 +1,18 @@
+import { formatUnits } from "viem";
 import type { Shares } from "../../types";
-import { groupNumber, isoDate, formatUnits18, toFloat18 } from "../format";
-import { NETWORKS, snapshotTimestamp } from "../networks";
+import { groupNumber, isoDate, formatUnits18 } from "../format";
+import { NETWORK_LIST, snapshotTimestamp } from "../networks";
 import type { Thresholds } from "../types";
 import type { ReconRow } from "../viewTypes";
 
 export function computeReconciliation(snapshot: Shares, thresholds: Thresholds): ReconRow[] {
-  const ethOracle = toFloat18(snapshot.blockNumbers.ETH.oraclePrice);
+  const ethOracle = Number(formatUnits(snapshot.blockNumbers.ETH.oraclePrice, 18));
   const timestamp = snapshotTimestamp(snapshot.day);
 
-  return NETWORKS.map((network) => {
+  return NETWORK_LIST.map((network) => {
     const s = snapshot.blockNumbers[network.key];
     const pps = Number(s.pricePerShare) / 1e6;
-    const ownOracle = toFloat18(s.oraclePrice);
+    const ownOracle = Number(formatUnits(s.oraclePrice, 18));
     const ref = ownOracle > 0 ? ownOracle : ethOracle > 0 ? ethOracle : pps;
     const refSource =
       ownOracle > 0 ? "own oracle read()" : ethOracle > 0 ? "Chronicle · Ethereum" : "vault pricePerShare()";

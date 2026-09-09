@@ -1,5 +1,5 @@
+import { formatUnits } from "viem";
 import { Network, type Shares } from "../../types";
-import { toFloat18 } from "../format";
 import type { AxisTick } from "../viewTypes";
 import { CHART_HEIGHT, CHART_VIEWBOX_HEIGHT, chartStep } from "./chartLayout";
 
@@ -19,7 +19,7 @@ const ethPrices = (data: Shares[]): PricePair[] =>
   data.map((entry) => {
     const eth = entry.blockNumbers[Network.ETH];
     const vault = Number(eth.pricePerShare) / 1e6;
-    const oracle = toFloat18(eth.oraclePrice);
+    const oracle = Number(formatUnits(eth.oraclePrice, 18));
     return { oracle: oracle > 0 ? oracle : vault, vault };
   });
 

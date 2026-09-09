@@ -1,10 +1,11 @@
 import { useMemo, useState } from "react";
+import { DAYS_TO_MONITOR } from "../constants";
 import { Network } from "../types";
 import { defaultBlockRange, type BlockRange } from "./compute/transactions";
 import { selectedContract } from "./compute/topology";
 import { useShareHistory } from "./data";
 import { buildLedger } from "./ledger";
-import { DAYS, DEFAULT_THRESHOLDS, NETWORKS } from "./networks";
+import { DEFAULT_THRESHOLDS } from "./networks";
 import type { Selection } from "./types";
 import { buildViewModel } from "./viewModel";
 import ErrorBanner from "./components/ErrorBanner";
@@ -17,8 +18,9 @@ import TransactionsSection from "./components/TransactionsSection";
 import { isoDate } from "./format";
 import { snapshotTimestamp } from "./networks";
 
-const NETWORK_KEYS = NETWORKS.map((n) => n.key);
+const NETWORK_KEYS = Object.values(Network);
 const INITIAL_SELECTION: Selection = { network: Network.PLUME, kind: "token" };
+const DAYS = Number(DAYS_TO_MONITOR);
 
 export default function Dashboard() {
   const { data, error } = useShareHistory();

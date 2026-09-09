@@ -1,10 +1,12 @@
+import { formatUnits } from "viem";
 import type { Shares } from "../../types";
-import { dayMonth, groupNumber, isoDate, toFloat18 } from "../format";
-import { NETWORKS, snapshotTimestamp } from "../networks";
+import { dayMonth, groupNumber, isoDate } from "../format";
+import { NETWORK_LIST, snapshotTimestamp } from "../networks";
 import type { DropEvent, SupplyBar, AxisTick } from "../viewTypes";
 import { CHART_HEIGHT, CHART_VIEWBOX_HEIGHT, chartStep } from "./chartLayout";
 
-export const maxAggregateSupply = (data: Shares[]): number => Math.max(...data.map((e) => toFloat18(e.total))) * 1.08;
+export const maxAggregateSupply = (data: Shares[]): number =>
+  Math.max(...data.map((e) => Number(formatUnits(e.total, 18)))) * 1.08;
 
 export function computeSupplyBars(data: Shares[], maxTotal: number): SupplyBar[] {
   const step = chartStep();
@@ -13,8 +15,8 @@ export function computeSupplyBars(data: Shares[], maxTotal: number): SupplyBar[]
 
   data.forEach((entry, i) => {
     let acc = 0;
-    NETWORKS.forEach((network) => {
-      const value = toFloat18(entry.blockNumbers[network.key].shares);
+    NETWORK_LIST.forEach((network) => {
+      const value = Number(formatUnits(entry.blockNumbers[network.key].shares, 18));
       if (value <= 0) return;
       const height = (value / maxTotal) * CHART_HEIGHT;
       const y = CHART_HEIGHT - (acc / maxTotal) * CHART_HEIGHT - height;

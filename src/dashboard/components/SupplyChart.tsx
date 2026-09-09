@@ -1,6 +1,6 @@
 import type { Network } from "../../types";
 import { RED, RED_INK } from "../palette";
-import { NETWORKS } from "../networks";
+import { NETWORK_LIST } from "../networks";
 import { CHART_HEIGHT, CHART_VIEWBOX_HEIGHT, CHART_WIDTH, CURSOR_LINE_HEIGHT } from "../compute/chartLayout";
 import type { AxisTick, SupplyBar } from "../viewTypes";
 
@@ -16,7 +16,7 @@ interface SupplyChartProps {
 function Legend() {
   return (
     <div style={{ display: "flex", gap: 10, marginLeft: "auto", flexWrap: "wrap" }}>
-      {NETWORKS.map((n) => (
+      {NETWORK_LIST.map((n) => (
         <div key={n.key} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11 }}>
           <i
             style={{

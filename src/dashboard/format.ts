@@ -1,4 +1,4 @@
-const E18 = 10n ** 18n;
+import { formatUnits } from "viem";
 
 /** Truncates a hex address/hash to a short form; other labels (e.g. "Chronicle validators") pass through unchanged. */
 export const shortAddress = (address: string): string => {
@@ -16,13 +16,12 @@ export const dayMonth = (timestamp: number): string => {
 
 export const groupNumber = (n: number): string => n.toLocaleString("en-US", { maximumFractionDigits: 0 });
 
-/** Formats an 18-decimal fixed-point bigint, truncating (not rounding) to `dp` decimal places. */
+const groupIntegerDigits = (digits: string): string => digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+/** Formats an 18-decimal fixed-point bigint as a grouped decimal string, truncated (not rounded) to `dp` places. */
 export const formatUnits18 = (value: bigint, dp: number): string => {
   const negative = value < 0n;
-  const magnitude = negative ? -value : value;
-  const integerPart = Number(magnitude / E18).toLocaleString("en-US");
-  const fractionPart = dp ? `.${(magnitude % E18).toString().padStart(18, "0").slice(0, dp)}` : "";
-  return `${negative ? "−" : ""}${integerPart}${fractionPart}`;
+  const [integerPart, fractionPart = ""] = formatUnits(negative ? -value : value, 18).split(".");
+  const fraction = dp ? `.${fractionPart.padEnd(dp, "0").slice(0, dp)}` : "";
+  return `${negative ? "−" : ""}${groupIntegerDigits(integerPart)}${fraction}`;
 };
-
-export const toFloat18 = (value: bigint): number => Number(value) / 1e18;

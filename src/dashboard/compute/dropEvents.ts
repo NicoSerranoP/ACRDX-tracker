@@ -1,6 +1,6 @@
 import type { Shares } from "../../types";
 import { formatUnits18, isoDate } from "../format";
-import { NETWORKS, snapshotTimestamp } from "../networks";
+import { NETWORK_LIST, snapshotTimestamp } from "../networks";
 import type { DropEvent } from "../viewTypes";
 
 /** Flags a per-network supply decrease between consecutive snapshots, severity set by the
@@ -13,7 +13,7 @@ export function computeDropEvents(data: Shares[], dropThresholdPct: number): Dro
     const curTotal = Number(data[i].total) / 1e18;
     const aggregatePct = ((curTotal - prevTotal) / prevTotal) * 100;
 
-    NETWORKS.forEach((network) => {
+    NETWORK_LIST.forEach((network) => {
       const before = data[i - 1].blockNumbers[network.key].shares;
       const after = data[i].blockNumbers[network.key].shares;
       if (after >= before) return;

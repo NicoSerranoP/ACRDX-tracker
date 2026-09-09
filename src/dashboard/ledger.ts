@@ -1,14 +1,9 @@
+import { formatUnits } from "viem";
+import { BURNER_ADDRESS, CHRONICLE_ORACLE_ADDRESS, PLUME_BURN_TX_HASH, ZERO_ADDRESS } from "../constants";
 import { Network } from "../types";
 import type { Shares, Snapshot } from "../types";
-import { formatUnits18, toFloat18 } from "./format";
-import {
-  networkMeta,
-  BURNER_ADDRESS,
-  INCIDENT_DAY,
-  ORACLE_ADDRESS,
-  PLUME_BURN_TX_HASH,
-  ZERO_ADDRESS,
-} from "./networks";
+import { formatUnits18 } from "./format";
+import { INCIDENT_DAY, NETWORKS } from "./networks";
 import { ledgerKey } from "./types";
 import type { Ledger, LedgerEvent } from "./types";
 
@@ -100,9 +95,9 @@ function priceEvents(
 ): { vault: LedgerEvent[]; oracle: LedgerEvent[] } {
   if (cur.priceLastUpdated === prev.priceLastUpdated) return { vault: [], oracle: [] };
 
-  const isSource = networkMeta(network).isOracleSource;
+  const isSource = NETWORKS[network].isOracleSource;
   const block = Number(cur.block);
-  const ownOraclePrice = toFloat18(cur.oraclePrice);
+  const ownOraclePrice = Number(formatUnits(cur.oraclePrice, 18));
   const vaultPrice = Number(cur.pricePerShare) / 1e6;
 
   const vault: LedgerEvent[] = [
@@ -111,7 +106,7 @@ function priceEvents(
       day,
       event: "PriceUpdated",
       amount: `${vaultPrice.toFixed(6)} USDC/share`,
-      from: isSource ? ORACLE_ADDRESS : "Axelar gateway",
+      from: isSource ? CHRONICLE_ORACLE_ADDRESS : "Axelar gateway",
       to: "USDC Vault",
       hash: randomHex(rng, 64),
     },
@@ -123,7 +118,7 @@ function priceEvents(
       event: isSource ? "Poke" : "MessageExecuted",
       amount: `${(isSource ? ownOraclePrice || vaultPrice : vaultPrice).toFixed(6)} USD`,
       from: isSource ? "Chronicle validators" : "Ethereum mainnet",
-      to: isSource ? ORACLE_ADDRESS : "Cross-chain oracle",
+      to: isSource ? CHRONICLE_ORACLE_ADDRESS : "Cross-chain oracle",
       hash: randomHex(rng, 64),
     },
   ];

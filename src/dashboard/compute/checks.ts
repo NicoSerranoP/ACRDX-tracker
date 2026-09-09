@@ -1,6 +1,6 @@
 import type { Shares } from "../../types";
 import { formatUnits18 } from "../format";
-import { NETWORKS } from "../networks";
+import { NETWORK_LIST } from "../networks";
 import type { Thresholds } from "../types";
 import type { CheckResult, DropEvent, ReconRow } from "../viewTypes";
 
@@ -12,7 +12,7 @@ const check = (n: number, title: string, ok: boolean, detail: string): CheckResu
 });
 
 function supplyReconciles(snapshot: Shares): boolean {
-  const sum = NETWORKS.reduce((acc, network) => acc + snapshot.blockNumbers[network.key].shares, 0n);
+  const sum = NETWORK_LIST.reduce((acc, network) => acc + snapshot.blockNumbers[network.key].shares, 0n);
   return sum === snapshot.total;
 }
 

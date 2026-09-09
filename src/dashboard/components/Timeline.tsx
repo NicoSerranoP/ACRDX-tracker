@@ -1,6 +1,9 @@
-import { DAYS, INCIDENT_DAY } from "../networks";
+import { DAYS_TO_MONITOR } from "../../constants";
+import { INCIDENT_DAY } from "../networks";
 
 export default function Timeline({ day, onDay }: { day: number; onDay: (day: number) => void }) {
+  const days = Number(DAYS_TO_MONITOR);
+
   return (
     <div
       style={{
@@ -23,7 +26,7 @@ export default function Timeline({ day, onDay }: { day: number; onDay: (day: num
         type="range"
         aria-label="Snapshot day"
         min={1}
-        max={DAYS}
+        max={days}
         step={1}
         value={day}
         onChange={(e) => onDay(Number(e.target.value))}
@@ -40,7 +43,7 @@ export default function Timeline({ day, onDay }: { day: number; onDay: (day: num
         >
           burn day
         </button>
-        <button className="btn btn-secondary" onClick={() => onDay(DAYS)} style={{ fontSize: 11, padding: "4px 9px" }}>
+        <button className="btn btn-secondary" onClick={() => onDay(days)} style={{ fontSize: 11, padding: "4px 9px" }}>
           latest
         </button>
       </div>

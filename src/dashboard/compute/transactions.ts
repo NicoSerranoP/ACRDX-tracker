@@ -1,6 +1,6 @@
 import type { Shares } from "../../types";
 import { groupNumber, isoDate, shortAddress } from "../format";
-import { networkMeta, snapshotTimestamp } from "../networks";
+import { NETWORKS, snapshotTimestamp } from "../networks";
 import type { Ledger, Selection } from "../types";
 import { ledgerKey } from "../types";
 import type { TxRow } from "../viewTypes";
@@ -33,7 +33,7 @@ export function computeTransactions(params: { ledger: Ledger; selection: Selecti
   totalCount: number;
 } {
   const { ledger, selection, range } = params;
-  const network = networkMeta(selection.network);
+  const network = NETWORKS[selection.network];
   const lo = parseBound(range.from, -Infinity);
   const hi = parseBound(range.to, Infinity);
   const all = ledger[ledgerKey(selection.network, selection.kind)] ?? [];

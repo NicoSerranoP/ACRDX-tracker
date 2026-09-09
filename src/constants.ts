@@ -61,3 +61,11 @@ export const ONE_DAY_IN_SECONDS = 24n * 60n * 60n;
 export const CHART_WIDTH = 1000;
 export const CHART_HEIGHT = 200;
 export const CHART_VIEWBOX_HEIGHT = 214;
+
+/** Stand-in sender address for the repeat Plume/Ethereum burns, pending an indexer. */
+export const BURNER_ADDRESS = "0x4a1e8Cf0b3d5d7A6F2c9E80B1d43aC7f6e5B2901";
+
+export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+
+/** Real Plume burn tx hash recorded in the design note (10 August 2026). */
+export const PLUME_BURN_TX_HASH = "0x9436d124e15bea9def739ab01daf192f8c70b87d16787bbdddba2868ced5008e";

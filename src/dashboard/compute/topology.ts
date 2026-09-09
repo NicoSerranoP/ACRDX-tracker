@@ -1,6 +1,8 @@
+import { formatUnits } from "viem";
+import { ACRDX_CONTRACT_ADDRESSES, CHRONICLE_ORACLE_ADDRESS } from "../../constants";
 import type { Network, Snapshot } from "../../types";
-import { formatUnits18, groupNumber, shortAddress, toFloat18 } from "../format";
-import { NETWORKS, ORACLE_ADDRESS, networkMeta, tokenAddress, type NetworkMeta } from "../networks";
+import { formatUnits18, groupNumber, shortAddress } from "../format";
+import { NETWORK_LIST, NETWORKS, type NetworkMeta } from "../networks";
 import type { ContractKind, Selection } from "../types";
 import type { TopologyNetwork, TopologyRow } from "../viewTypes";
 
@@ -17,13 +19,13 @@ function contractInfo(network: NetworkMeta, kind: ContractKind): ContractInfo {
       ? {
           title: "Chronicle Labs Oracle",
           method: "read()",
-          addr: ORACLE_ADDRESS,
-          url: `${network.explorer}/address/${ORACLE_ADDRESS}`,
+          addr: CHRONICLE_ORACLE_ADDRESS,
+          url: `${network.explorer}/address/${CHRONICLE_ORACLE_ADDRESS}`,
         }
       : { title: "Cross-chain oracle", method: "updates vault", addr: "", url: "" };
   }
   if (kind === "token") {
-    const addr = tokenAddress(network.key);
+    const addr = ACRDX_CONTRACT_ADDRESSES[network.key];
     return { title: "ERC20 Share Token", method: "totalSupply()", addr, url: `${network.explorer}/address/${addr}` };
   }
   return { title: "USDC Vault", method: "pricePerShare()", addr: "", url: "" };
@@ -32,7 +34,7 @@ function contractInfo(network: NetworkMeta, kind: ContractKind): ContractInfo {
 function contractValue(kind: ContractKind, s: Snapshot): string {
   if (kind === "token") return formatUnits18(s.shares, 0);
   if (kind === "vault") return (Number(s.pricePerShare) / 1e6).toFixed(6);
-  const ownOracle = toFloat18(s.oraclePrice);
+  const ownOracle = Number(formatUnits(s.oraclePrice, 18));
   return (ownOracle > 0 ? ownOracle : Number(s.pricePerShare) / 1e6).toFixed(6);
 }
 
@@ -61,7 +63,7 @@ export interface SelectedContract {
 
 /** The title/address/link of the currently selected contract, for the Transactions section header. */
 export function selectedContract(selection: Selection): SelectedContract {
-  const network = networkMeta(selection.network);
+  const network = NETWORKS[selection.network];
   const info = contractInfo(network, selection.kind);
   return {
     title: `${network.label} · ${info.title}`,
@@ -72,7 +74,7 @@ export function selectedContract(selection: Selection): SelectedContract {
 }
 
 export function computeTopology(blockNumbers: Record<Network, Snapshot>, selection: Selection): TopologyNetwork[] {
-  return NETWORKS.map((network) => {
+  return NETWORK_LIST.map((network) => {
     const s = blockNumbers[network.key];
     return {
       network: network.key,
