@@ -17,16 +17,6 @@ Build the monitoring that catches that class of problem. Deciding what "that cla
 
 We offer short Q&A sessions. Questions should be submitted at least 6h before each session; we'll work through them live and you can follow up freely.
 
-## TODOs
-
-1. Build a UI interface to fetch data lively
-
-2. Monitor oracle prices
-
-3. Cash being sent after the token burn in August 10th
-
-3.1. which sky entitiy received the payment?
-
 # Role
 
 ## About the Company

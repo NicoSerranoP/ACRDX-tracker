@@ -4,17 +4,45 @@
 
 ACRDX is a ShareToken smart contract representing the Tokenized Apollo Diversified Credit Fund issued by Anemoy Capital SPC Limited and deployed using the Centrifuge tokenization platform. The contract inherits a ERC-20 token structure where each one represents a unit of the fund's shares, therefore the `totalSupply` function reflects the total number of issued shares.
 
-ACRDX is deployed in 5 different networks: Ethereum, Optimism, Monad, Base and Plume. The total amount of ACRDX on-chain shares is represented by the sum of the total supply across these networks.
+### Centrifuge
+
+The Centrifuge platform allows third parties to deploy Real World Assets (RWAs) using their protocol. Centrifuge centralizes all deployed tokens in a set of smart contracts (Hub, Spoke per chain deployment) that RWAs interact with to manage and track their assets. For more information please read the [docs](https://docs.centrifuge.io/developer/protocol/overview/). The following image shows the Centrifuge architecture from a ACRDX point of view:
+
+![Centrifuge Architecture](centrifuge-architecture.png)
+
+### ACRDX accross diferent networks
+
+ACRDX is a single RWA protocol that has deployments in 5 different networks: Ethereum, Optimism, Monad, Base and Plume. The total amount of ACRDX on-chain shares is represented by the sum of the total supply across these networks.
+
+Each network has its own share token deployment and their respective vault (USDC vaults are the only currently active vaults in the different networks). Each vault has a `pricePerShare()` function that returns the current share price from a [Chronicle Labs oracle](https://chroniclelabs.org/dashboard/proof-of-asset/anemoy-tokenized-apollo-acrdx). This oracle performs a Proof of Assets off-chain mechanism and publishes the share price daily in Ethereum mainnet. This price is propagated through a cross-chain messaging protocol using Axelar.
+
+There are escrow contracts deployed in each network that contain crypto assets related to the ACRDX protocol. These contracts help manage and secure the assets before they are allocated to the respective vaults. They act as an entrypoint for depositors to mint and transfer tokens to their respective addresses.
+
+![ACRDX Deployments](acrdx-deployments.png)
 
 ## How to Monitor ACRDX
 
 To monitor ACRDX, we track the on-chain total supply of the token and multiply it by the oracle price provided by Chronicle Labs and their Proof Of Assets mechanism (it is a trusted mechanism). We follow up token supply and oracle price accross a time frame in order to check for anomalies. There is only one Chronicle Labs oracle and each network USDC vault was deployed using Axelar (cross-chain communication) so I assume the price feed is coming from the only Chronicle Labs oracle deployed on Ethereum mainnet.
 
-_TODO:_ Explore the ACRDX vaults to look for asset holdings (only USDC as of now) and cross-check them with the anomalies movement. It looks like it might be related to a staled oracle price. The vault exposes the Chronicle Labs price in `pricePerShare()` and `priceLastUpdated()`, We could monitor it for anomalies.
+### August 10th incident
 
-_TODO:_ Additionally, we compare this calculated value with the reported AUM (Assets Under Management) to ensure accuracy. The reported AUM is provided by <TO_BE_CONFIRMED_BUT_I_BELIEVE_BY_CENTRIFUGE_API>.
+On August 10th 2026, 12 million share tokens on the Plume network were burned reducing Plume's total supply from 42 million to 30 million in a single transaction. The transaction authorized moving 12M tokens from the ALM Proxy contract to the zero address (0x000). There was no clear redemption or payment in the Plume's transaction so for outside observers it looked like someone had burned 12M tokens.
 
-## Data sources
+There was no considerable oracle price increase following the burn in any network, indicating that the market value of the underlying assets did not change despite the token supply reduction. So the burn event had to had a cash settlement somewhere. The escrow contracts did not show any money movement transactions of at amount.
+
+By researching the ALMProxy contract, I realized that it was part of the Sky's Atlas system. Looking further, I found that Sky had initially committed $50 million dollars to ACRDX and I assumed it was through Atlas. I researched the Sky entities in the different networks in order to find a cash settlement. Finally, I found that a Grove AMLProxy address on Ethereum mainnet had received $12M dollars from a Coinbase Prime wallet on August 10th 2026 and used it to pay USDS debt. The amount paid was equal to the burned shares times the oracle price at that time.
+
+## Conclusions
+
+1. It is important to monitor token supply and oracle prices daily for this type of protocols. It allows to find anomalies and investigate further more
+
+2. It is important to consider that some RWA tokens like ACRDX are deployed in different networks and in some cases there are no atomic settlement. For example the August 10th redemption happened on Plume and Ethereum mainnet from a custodial Coinbase address.
+
+3. It is important to define acceptance thresholds so small discrepancies in oracle prices or timestamp do not raise false alarms that cause innecesary noise in the long run.
+
+4. It is important to have trusted collaborators and data providers in order to ensure a correct monitoring. The Chronicle Labs Proof of Assets mechanism allow us to rely on an on-chain number rather than looking for off-chain evidence that might be impossible to access.
+
+## Data sources and notes
 
 All this information was fetched on September 7th 2026
 
