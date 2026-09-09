@@ -1,4 +1,4 @@
-import { Network } from "./types.js";
+import { Network } from "../types.js";
 import { DAYS_TO_MONITOR, ONE_DAY_IN_BLOCKS } from "./constants.js";
 
 const getBlocksToMonitor = (currentBlock: bigint, network: Network): bigint[] => {

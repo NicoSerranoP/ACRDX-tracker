@@ -1,5 +1,5 @@
 import Rpc from "./rpc.js";
-import { Network, Shares } from "./types.js";
+import { Network, Shares } from "../types.js";
 import { CHRONICLE_ORACLE_ADDRESS, DAYS_TO_MONITOR } from "./constants.js";
 import { formatUnits } from "viem/utils";
 import saveAsJSONFile from "./file.js";
@@ -34,11 +34,11 @@ const main = async (): Promise<void> => {
     });
   }
 
-  await saveAsJSONFile("shares.json", shares);
+  await saveAsJSONFile("../../public/shares.json", shares);
 
   const oraclePrice = await rpc.getPrice(Network.ETH, CHRONICLE_ORACLE_ADDRESS);
   const formattedOraclePrice = Number(formatUnits(oraclePrice, 18)).toFixed(6);
-  const currentTotalShares = Number(formatUnits(shares[44].total, 18)).toFixed(2);
+  const currentTotalShares = Number(formatUnits(shares[shares.length - 1].total, 18)).toFixed(2);
 
   console.log("current price: ", formattedOraclePrice);
   console.log("current AUM: ", (Number(currentTotalShares) * Number(formattedOraclePrice)).toFixed(2));

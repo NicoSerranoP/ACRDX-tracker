@@ -33,7 +33,11 @@ All this information was fetched on September 7th 2026
    - If you interact with the ACRDX contract.vault(asset) function, you will see that the only active vault is for USDC.
    - **IMPORTANT:** shows $42,362,030 as Apollo Diversified Credit Market Value as of July 20, 2026. Maybe it is connected to the token supply event in August 3rd.
 
-3. [Typescript monitoring tool](../README.md): shows
+3. [Grove deploys $50M to ACRDX](https://centrifuge.io/blog/acrdx-launch-on-centrifuge): shows
+   - ACRDX was launched using Centrifuge intrastructure and in the Plume blockchain (the other networks are not mentioned)
+   - Grove committed $50M to ACRDX at the beginning. The 12M and 17M burned tokens belonged to AMLProxy (part of Grove/Sky - Atlas framework)
+
+4. [Typescript monitoring tool](../README.md): shows
    - for exact daily monitoring, the script takes around ~5 minutes to finish.
    - `shares.json` (ETH block number: 25722135) shows the Plume burn incident. $42M before, $30M after.
    - `shares.json` (ETH block number: 25722135) shows another burn in Ethereum. 378,869 tokens before, 261,058 after. 117,810 burned tokens.

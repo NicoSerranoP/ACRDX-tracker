@@ -1,6 +1,6 @@
 import { loadEnvFile } from "node:process";
 import { Hex } from "viem";
-import { Network } from "./types.js";
+import { Network } from "../types.js";
 
 loadEnvFile("./.env");
 

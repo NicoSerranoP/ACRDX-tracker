@@ -1,15 +1,7 @@
 {
-  "compilerOptions": {
-    "skipLibCheck": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "target": "ES2023",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "esModuleInterop": true,
-    "types": ["node"],
-    "resolveJsonModule": true
-  }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

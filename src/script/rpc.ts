@@ -1,10 +1,10 @@
 import { loadEnvFile } from "node:process";
 import { createPublicClient, getContract, Hex, http, PublicClient } from "viem";
 
-import ACRDX_ABI from "./abis/ACRDX.json" with { type: "json" };
-import USDC_VAULT_ABI from "./abis/USDCVault.json" with { type: "json" };
-import CHRONICLE_ORACLE_ABI from "./abis/ChronicleOracle.json" with { type: "json" };
-import { BlockResult, Network, Snapshot } from "./types.js";
+import ACRDX_ABI from "../abis/ACRDX.json" with { type: "json" };
+import USDC_VAULT_ABI from "../abis/USDCVault.json" with { type: "json" };
+import CHRONICLE_ORACLE_ABI from "../abis/ChronicleOracle.json" with { type: "json" };
+import { BlockResult, Network, Snapshot } from "../types.js";
 import {
   ACRDX_CONTRACT_ADDRESSES,
   CHRONICLE_ORACLE_ADDRESS,
