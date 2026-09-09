@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { CHRONICLE_ORACLE_ADDRESS } from "../constants";
+import rpc from "./clients";
 
 export function useFetchOnChainData() {
   const [data, setData] = useState(false);
@@ -7,8 +7,10 @@ export function useFetchOnChainData() {
   const [error, setError] = useState<string | null>(null);
 
   const fetchData = useCallback(async () => {
-    console.log("Nico is here");
-    console.log(CHRONICLE_ORACLE_ADDRESS);
+    await rpc.setupContracts();
+
+    const price = await rpc.oracleContract.read.read();
+    console.log("price: ", price);
   }, []);
 
   return { data, loading, error, fetchData };

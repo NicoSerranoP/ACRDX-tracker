@@ -1,4 +1,3 @@
-import { loadEnvFile } from "node:process";
 import { createPublicClient, getContract, Hex, http, PublicClient } from "viem";
 
 import ACRDX_ABI from "../abis/ACRDX.json" with { type: "json" };
@@ -11,10 +10,9 @@ import {
   DAYS_TO_MONITOR,
   ONE_DAY_IN_BLOCKS,
   ONE_DAY_IN_SECONDS,
+  RPC_URLS,
   USDC_CONTRACT_ADDRESSES,
 } from "../constants.js";
-
-loadEnvFile("./.env");
 
 export default class Rpc {
   clients: Record<Network, PublicClient>;
@@ -23,14 +21,8 @@ export default class Rpc {
     this.clients = {} as Record<Network, PublicClient>;
 
     Object.values(Network).forEach((network) => {
-      const envRPCUrl = process.env[`VITE_${network}_RPC_URL`];
-
-      if (!envRPCUrl) {
-        throw new Error(`RPC URL for ${network} is not defined in the env variables.`);
-      }
-
       const client = createPublicClient({
-        transport: http(envRPCUrl, { batch: { wait: 10 } }),
+        transport: http(RPC_URLS[network], { batch: { wait: 10 } }),
         batch: {
           multicall: {
             wait: 10,
@@ -38,7 +30,7 @@ export default class Rpc {
         },
       });
 
-      this.clients[network as Network] = client;
+      this.clients[network] = client;
     });
   }
 

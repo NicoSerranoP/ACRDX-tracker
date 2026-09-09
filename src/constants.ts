@@ -24,6 +24,14 @@ const getRequiredEnv = (key: string): string => {
 export const DAYS_TO_MONITOR = BigInt(readEnv("VITE_DAYS_TO_MONITOR") ?? "45");
 export const CHRONICLE_ORACLE_ADDRESS = getRequiredEnv("VITE_CHRONICLE_ORACLE_ADDRESS") as Hex;
 
+export const RPC_URLS = {
+  [Network.ETH]: getRequiredEnv("VITE_ETH_RPC_URL"),
+  [Network.OP]: getRequiredEnv("VITE_OP_RPC_URL"),
+  [Network.MONAD]: getRequiredEnv("VITE_MONAD_RPC_URL"),
+  [Network.BASE]: getRequiredEnv("VITE_BASE_RPC_URL"),
+  [Network.PLUME]: getRequiredEnv("VITE_PLUME_RPC_URL"),
+};
+
 export const ACRDX_CONTRACT_ADDRESSES = {
   [Network.ETH]: getRequiredEnv("VITE_ACRDX_ETH_CONTRACT_ADDRESS") as Hex,
   [Network.OP]: getRequiredEnv("VITE_ACRDX_OP_CONTRACT_ADDRESS") as Hex,
