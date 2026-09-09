@@ -51,16 +51,22 @@ function TopologyRowItem({
         <div className="mono" style={{ fontSize: 9, color: "#7a7a7d" }}>
           {row.method}
         </div>
-        <a
-          href={row.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mono"
-          onClick={(e) => e.stopPropagation()}
-          style={{ fontSize: 9, marginLeft: "auto", textAlign: "right" }}
-        >
-          {row.addrShort}
-        </a>
+        {row.hasLink ? (
+          <a
+            href={row.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mono"
+            onClick={(e) => e.stopPropagation()}
+            style={{ fontSize: 9, marginLeft: "auto", textAlign: "right" }}
+          >
+            {row.addrShort}
+          </a>
+        ) : (
+          <div className="mono" style={{ fontSize: 9, marginLeft: "auto", textAlign: "right", color: "#7a7a7d" }}>
+            {row.addrShort}
+          </div>
+        )}
       </div>
     </div>
   );

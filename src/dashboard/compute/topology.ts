@@ -43,7 +43,8 @@ function topologyRows(network: NetworkMeta, s: Snapshot, selection: Selection): 
       kind,
       title: info.title,
       method: info.method,
-      url: info.url || "#",
+      url: info.url,
+      hasLink: Boolean(info.url),
       addrShort: info.addr ? shortAddress(info.addr) : "via vault(USDC)",
       value: contractValue(kind, s),
       selected: selection.network === network.key && selection.kind === kind,
@@ -55,6 +56,7 @@ export interface SelectedContract {
   title: string;
   addr: string;
   url: string;
+  hasLink: boolean;
 }
 
 /** The title/address/link of the currently selected contract, for the Transactions section header. */
@@ -64,7 +66,8 @@ export function selectedContract(selection: Selection): SelectedContract {
   return {
     title: `${network.label} · ${info.title}`,
     addr: info.addr || "address resolved via ACRDX.vault(USDC) — link pending",
-    url: info.url || "#",
+    url: info.url,
+    hasLink: Boolean(info.url),
   };
 }
 

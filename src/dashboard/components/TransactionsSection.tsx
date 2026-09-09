@@ -8,6 +8,7 @@ export interface TransactionsSectionProps {
   selectedTitle: string;
   selectedAddr: string;
   selectedUrl: string;
+  selectedHasLink: boolean;
   range: BlockRange;
   rows: TxRow[];
   totalCount: number;
@@ -25,6 +26,7 @@ export default function TransactionsSection(props: TransactionsSectionProps) {
     selectedTitle,
     selectedAddr,
     selectedUrl,
+    selectedHasLink,
     range,
     rows,
     totalCount,
@@ -36,7 +38,7 @@ export default function TransactionsSection(props: TransactionsSectionProps) {
 
   return (
     <div style={{ padding: "30px 20px 0" }}>
-      <SectionHeading n="03" title="Transactions" trailing={`${rows.length} of ${totalCount} events in range`} />
+      <SectionHeading n="03" title="Transactions" trailing={`${rows.length} shown of ${totalCount} total events`} />
 
       <div style={{ display: "flex", alignItems: "flex-end", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
         <div className="blueprint" style={{ padding: "8px 11px", flex: "1 1 260px", minWidth: 240 }}>
@@ -47,9 +49,15 @@ export default function TransactionsSection(props: TransactionsSectionProps) {
           <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, fontSize: 16 }}>
             {selectedTitle}
           </div>
-          <a href={selectedUrl} target="_blank" rel="noopener noreferrer" className="mono" style={{ fontSize: 11 }}>
-            {selectedAddr}
-          </a>
+          {selectedHasLink ? (
+            <a href={selectedUrl} target="_blank" rel="noopener noreferrer" className="mono" style={{ fontSize: 11 }}>
+              {selectedAddr}
+            </a>
+          ) : (
+            <div className="mono" style={{ fontSize: 11, color: "#7a7a7d" }}>
+              {selectedAddr}
+            </div>
+          )}
         </div>
         <div className="field" style={{ flex: "0 1 150px" }}>
           <label>Block from</label>

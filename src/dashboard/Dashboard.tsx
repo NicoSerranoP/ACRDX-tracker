@@ -145,6 +145,7 @@ function DashboardBody(props: DashboardBodyProps) {
         selectedTitle={contract.title}
         selectedAddr={contract.addr}
         selectedUrl={contract.url}
+        selectedHasLink={contract.hasLink}
         range={vm.range}
         rows={vm.txRows}
         totalCount={vm.txTotalCount}

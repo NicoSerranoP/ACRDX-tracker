@@ -40,6 +40,7 @@ export interface TopologyRow {
   method: string;
   addrShort: string;
   url: string;
+  hasLink: boolean;
   value: string;
   selected: boolean;
 }
