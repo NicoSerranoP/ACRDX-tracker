@@ -1,6 +1,6 @@
 import type { Shares } from "../../types";
 import { dayMonth, groupNumber, isoDate, toFloat18 } from "../format";
-import { DAYS, NETWORKS, snapshotTimestamp } from "../networks";
+import { NETWORKS, snapshotTimestamp } from "../networks";
 import type { DropEvent, SupplyBar, AxisTick } from "../viewTypes";
 import { CHART_HEIGHT, CHART_VIEWBOX_HEIGHT, chartStep } from "./chartLayout";
 
@@ -44,7 +44,7 @@ export function computeSupplyGridY(maxTotal: number): AxisTick[] {
 
 export const computeXTicks = (data: Shares[]): { label: string }[] =>
   data.map((entry, i) => ({
-    label: i % 3 === 0 || i === DAYS - 1 ? dayMonth(snapshotTimestamp(entry.day)) : "",
+    label: i % 3 === 0 || i === data.length - 1 ? dayMonth(snapshotTimestamp(entry.day)) : "",
   }));
 
 export function computeDropMarks(dropEvents: DropEvent[]): { x: number; label: string }[] {

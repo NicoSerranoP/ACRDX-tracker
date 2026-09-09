@@ -147,7 +147,7 @@ export default function SupplyChart({ bars, gridY, xTicks, dropMarks, cursorX, o
             ))}
             <line x1={cursorX} y1={0} x2={cursorX} y2={206} stroke="#1d1f20" strokeWidth={1} />
           </svg>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(45, 1fr)", marginTop: 4 }}>
+          <div style={{ display: "grid", gridTemplateColumns: `repeat(${xTicks.length}, 1fr)`, marginTop: 4 }}>
             {xTicks.map((t, i) => (
               <div
                 key={i}

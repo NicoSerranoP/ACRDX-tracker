@@ -1,4 +1,5 @@
-import type { Network, Shares, Snapshot } from "../types";
+import { Network } from "../types";
+import type { Shares, Snapshot } from "../types";
 import { formatUnits18, toFloat18 } from "./format";
 import { networkMeta, BURNER_ADDRESS, ORACLE_ADDRESS, PLUME_BURN_TX_HASH, ZERO_ADDRESS } from "./networks";
 import { ledgerKey } from "./types";
@@ -53,7 +54,7 @@ function transferEvents(
   const burn = delta < 0n;
   const magnitude = burn ? -delta : delta;
   const isLargeBurn = burn && magnitude > LARGE_BURN_THRESHOLD;
-  const isRealPlumeBurn = network === "PLUME" && isLargeBurn;
+  const isRealPlumeBurn = network === Network.PLUME && isLargeBurn;
   const block = Number(cur.block);
   const events: LedgerEvent[] = [];
 
