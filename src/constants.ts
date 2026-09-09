@@ -57,3 +57,7 @@ export const ONE_DAY_IN_BLOCKS = {
 };
 
 export const ONE_DAY_IN_SECONDS = 24n * 60n * 60n;
+
+export const CHART_WIDTH = 1000;
+export const CHART_HEIGHT = 200;
+export const CHART_VIEWBOX_HEIGHT = 214;
