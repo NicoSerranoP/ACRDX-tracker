@@ -37,12 +37,24 @@ export default function StalenessMatrix({
             >
               <div style={{ fontSize: 11, fontWeight: 600 }}>{row.label}</div>
               <div style={{ display: "grid", gridTemplateColumns: `repeat(${row.cells.length}, 1fr)`, gap: 1 }}>
-                {row.cells.map((cell, i) => (
-                  <i
-                    key={i}
+                {row.cells.map((cell) => (
+                  <button
+                    key={cell.day}
+                    type="button"
                     onClick={() => onSelectCell(row.network, cell.day)}
                     title={cell.tip}
-                    style={{ height: 15, background: staleLevelColor[cell.fill], cursor: "pointer", display: "block" }}
+                    aria-label={cell.tip}
+                    style={{
+                      height: 15,
+                      width: "100%",
+                      background: staleLevelColor[cell.fill],
+                      cursor: "pointer",
+                      display: "block",
+                      appearance: "none",
+                      border: "none",
+                      padding: 0,
+                      margin: 0,
+                    }}
                   />
                 ))}
               </div>

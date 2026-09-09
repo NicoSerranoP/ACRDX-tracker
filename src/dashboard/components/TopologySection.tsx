@@ -12,9 +12,19 @@ function TopologyRowItem({
   network: TopologyNetwork;
   onSelect: (s: Selection) => void;
 }) {
+  const select = () => onSelect({ network: network.network, kind: row.kind });
+
   return (
     <div
-      onClick={() => onSelect({ network: network.network, kind: row.kind })}
+      role="button"
+      tabIndex={0}
+      onClick={select}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          select();
+        }
+      }}
       style={{
         position: "relative",
         border: "1px solid rgba(29,31,32,.16)",
@@ -46,6 +56,7 @@ function TopologyRowItem({
           target="_blank"
           rel="noopener noreferrer"
           className="mono"
+          onClick={(e) => e.stopPropagation()}
           style={{ fontSize: 9, marginLeft: "auto", textAlign: "right" }}
         >
           {row.addrShort}

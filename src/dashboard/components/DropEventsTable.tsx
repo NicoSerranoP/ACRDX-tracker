@@ -39,10 +39,10 @@ export default function DropEventsTable({
             </tr>
           </thead>
           <tbody>
-            {events.map((e, i) => {
+            {events.map((e) => {
               const colors = tagColors(e.severity === "ALERT");
               return (
-                <tr key={i}>
+                <tr key={`${e.networkKey}-${e.day}`}>
                   <td className="mono">{e.date}</td>
                   <td style={{ fontWeight: 600 }}>{e.network}</td>
                   <td className="mono num" style={{ textAlign: "right" }}>

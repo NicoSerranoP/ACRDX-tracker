@@ -83,10 +83,10 @@ export default function TransactionsSection(props: TransactionsSectionProps) {
             </tr>
           </thead>
           <tbody>
-            {rows.map((t, i) => {
+            {rows.map((t) => {
               const colors = rowTagColors(t.event);
               return (
-                <tr key={i} style={{ background: t.flagged ? "oklch(.97 .015 27)" : "transparent" }}>
+                <tr key={t.url} style={{ background: t.flagged ? "oklch(.97 .015 27)" : "transparent" }}>
                   <td className="mono num" style={{ textAlign: "right" }}>
                     {t.block}
                   </td>

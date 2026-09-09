@@ -14,11 +14,18 @@ export interface BlockRange {
 
 /** Default block window: the selected contract's block span over the last 7 snapshots. */
 export function defaultBlockRange(data: Shares[], day: number, selection: Selection): BlockRange {
-  const index = day - 1;
+  const index = Math.min(Math.max(day - 1, 0), data.length - 1);
   const startIndex = Math.max(0, index - WINDOW_SNAPSHOTS + 1);
   const from = data[startIndex].blockNumbers[selection.network].block;
   const to = data[index].blockNumbers[selection.network].block;
   return { from: from.toString(), to: to.toString() };
+}
+
+/** Parses a user-entered block bound; blank or non-numeric input is treated as unbounded. */
+function parseBound(value: string, unbounded: number): number {
+  if (value.trim() === "") return unbounded;
+  const parsed = Number(value);
+  return Number.isNaN(parsed) ? unbounded : parsed;
 }
 
 export function computeTransactions(params: { ledger: Ledger; selection: Selection; range: BlockRange }): {
@@ -27,8 +34,8 @@ export function computeTransactions(params: { ledger: Ledger; selection: Selecti
 } {
   const { ledger, selection, range } = params;
   const network = networkMeta(selection.network);
-  const lo = range.from === "" ? -Infinity : Number(range.from);
-  const hi = range.to === "" ? Infinity : Number(range.to);
+  const lo = parseBound(range.from, -Infinity);
+  const hi = parseBound(range.to, Infinity);
   const all = ledger[ledgerKey(selection.network, selection.kind)] ?? [];
 
   const rows = all

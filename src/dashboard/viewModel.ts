@@ -60,10 +60,11 @@ export function buildViewModel(
   ui: UIState,
   thresholds: Thresholds,
 ): DashboardViewModel {
-  const snapshot = data[ui.day - 1];
+  const day = Math.min(Math.max(ui.day, 1), data.length);
+  const snapshot = data[day - 1];
   const recon = computeReconciliation(snapshot, thresholds);
   const dropEvents = computeDropEvents(data, thresholds.dropThresholdPct);
-  const checks = computeChecks({ snapshot, day: ui.day, recon, dropEvents, thresholds });
+  const checks = computeChecks({ snapshot, day, recon, dropEvents, thresholds });
   const kpis = computeKpis({ snapshot, recon, checks, thresholds });
   const maxTotal = maxAggregateSupply(data);
   const { rows: txRows, totalCount: txTotalCount } = computeTransactions({
@@ -73,7 +74,7 @@ export function buildViewModel(
   });
 
   return {
-    day: ui.day,
+    day,
     snapshot,
     selection: ui.selection,
     kpis,
