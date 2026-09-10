@@ -70,7 +70,7 @@ export const INCIDENT_DAY = 17;
 
 export const DEFAULT_THRESHOLDS = {
   devTolerance: 0.001,
-  stalenessHours: 24,
+  stalenessHours: 48,
   dropThresholdPct: 5,
   dropWatchDays: 3,
 };

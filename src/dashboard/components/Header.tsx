@@ -36,7 +36,7 @@ export default function Header({
     <div
       style={{
         display: "flex",
-        alignItems: "baseline",
+        alignItems: "center",
         gap: 20,
         flexWrap: "wrap",
         padding: "14px 20px 12px",
@@ -67,7 +67,12 @@ export default function Header({
         }}
       >
         Anemoy Tokenized Apollo Diversified Credit Fund
-        <a href="https://github.com/NicoSerranoP/ACRDX-tracker/blob/main/design/DESIGN.md">Design.md</a>
+        <a
+          href="https://github.com/NicoSerranoP/ACRDX-tracker/blob/main/design/DESIGN.md"
+          style={{ textDecoration: "underline" }}
+        >
+          DESIGN.md
+        </a>
       </div>
       <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
         <div style={{ fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", color: "#7a7a7d" }}>
