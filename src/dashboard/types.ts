@@ -19,6 +19,7 @@ export interface Thresholds {
   devTolerance: number;
   stalenessHours: number;
   dropThresholdPct: number;
+  dropWatchDays: number;
 }
 
 export interface LedgerEvent {

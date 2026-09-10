@@ -72,4 +72,5 @@ export const DEFAULT_THRESHOLDS = {
   devTolerance: 0.001,
   stalenessHours: 24,
   dropThresholdPct: 5,
+  dropWatchDays: 3,
 };

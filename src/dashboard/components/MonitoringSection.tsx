@@ -53,7 +53,7 @@ export default function MonitoringSection(props: MonitoringSectionProps) {
         trailing={
           <span className="mono">
             tol {thresholds.devTolerance.toFixed(5)} · stale &gt; {thresholds.stalenessHours}h · drop &gt;{" "}
-            {thresholds.dropThresholdPct}%
+            {thresholds.dropThresholdPct}% in {thresholds.dropWatchDays}d
           </span>
         }
       />

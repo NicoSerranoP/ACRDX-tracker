@@ -27,7 +27,9 @@ export function computeChecks(params: {
   const deviationFails = recon.filter((r) => r.deviationBad);
   const staleFails = recon.filter((r) => r.ageBad);
   const sumOk = supplyReconciles(snapshot);
-  const alertsBefore = dropEvents.filter((e) => e.severity === "ALERT" && e.day <= day);
+  // "Watch" means recent, not historical — a breach from weeks ago shouldn't still show red today.
+  const watchWindowStart = day - thresholds.dropWatchDays + 1;
+  const alertsBefore = dropEvents.filter((e) => e.severity === "ALERT" && e.day <= day && e.day >= watchWindowStart);
   const lastAlert = alertsBefore[alertsBefore.length - 1];
 
   return [
@@ -58,8 +60,8 @@ export function computeChecks(params: {
       "Supply drop watch",
       alertsBefore.length === 0,
       alertsBefore.length
-        ? `${alertsBefore.length} drop past ${thresholds.dropThresholdPct}% up to this snapshot — latest ${lastAlert.network} ${lastAlert.pct}`
-        : `No aggregate decrease past ${thresholds.dropThresholdPct}% up to this snapshot.`,
+        ? `${alertsBefore.length} drop past ${thresholds.dropThresholdPct}% in the last ${thresholds.dropWatchDays} days — latest ${lastAlert.network} ${lastAlert.pct}`
+        : `No aggregate decrease past ${thresholds.dropThresholdPct}% in the last ${thresholds.dropWatchDays} days.`,
     ),
   ];
 }

@@ -56,8 +56,18 @@ export default function Header({
           ACRDX
         </div>
       </div>
-      <div style={{ fontSize: 12, color: "#5d5d60", maxWidth: 460, lineHeight: 1.35 }}>
-        Anemoy Tokenized Apollo Diversified Credit Fund — share token across 5 networks
+      <div
+        style={{
+          fontSize: 12,
+          color: "#5d5d60",
+          maxWidth: 460,
+          lineHeight: 1.35,
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        Anemoy Tokenized Apollo Diversified Credit Fund
+        <a href="https://github.com/NicoSerranoP/ACRDX-tracker/blob/main/design/DESIGN.md">Design.md</a>
       </div>
       <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
         <div style={{ fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", color: "#7a7a7d" }}>
