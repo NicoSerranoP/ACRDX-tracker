@@ -18,9 +18,6 @@ export default function Timeline({
         padding: "10px 20px",
         borderBottom: "1px solid rgba(29,31,32,.16)",
         background: "#e9e9ea",
-        position: "sticky",
-        top: 0,
-        zIndex: 20,
         flexWrap: "wrap",
       }}
     >

@@ -1,5 +1,24 @@
 import { DIVIDER, VERIFIED_INK } from "../palette";
 
+function Logo() {
+  return (
+    <svg width={28} height={28} viewBox="0 0 32 32" role="img" aria-label="ACRDX" style={{ flex: "none" }}>
+      <rect width="32" height="32" rx="8" fill="#1a7d52" />
+      <text
+        x="16"
+        y="23"
+        textAnchor="middle"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontWeight={700}
+        fontSize={19}
+        fill="#ffffff"
+      >
+        A
+      </text>
+    </svg>
+  );
+}
+
 export default function Header({
   snapshotDate,
   dayLabel,
@@ -24,10 +43,18 @@ export default function Header({
         borderBottom: `1px solid ${DIVIDER}`,
       }}
     >
-      <div
-        style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 24, letterSpacing: ".01em" }}
-      >
-        ACRDX
+      <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
+        <Logo />
+        <div
+          style={{
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 700,
+            fontSize: 24,
+            letterSpacing: ".01em",
+          }}
+        >
+          ACRDX
+        </div>
       </div>
       <div style={{ fontSize: 12, color: "#5d5d60", maxWidth: 460, lineHeight: 1.35 }}>
         Anemoy Tokenized Apollo Diversified Credit Fund — share token across 5 networks

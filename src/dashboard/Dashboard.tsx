@@ -88,14 +88,16 @@ export default function Dashboard() {
         padding: "0 0 60px",
       }}
     >
-      <Header
-        snapshotDate={data ? isoDate(snapshotTimestamp(day, totalDays)) : "—"}
-        dayLabel={`${day} / ${totalDays}`}
-        onVerify={verify}
-        verifying={verifying}
-        verifiedAt={verifiedAt}
-      />
-      <Timeline day={day} totalDays={totalDays} onDay={setDay} />
+      <div style={{ position: "sticky", top: 0, zIndex: 30, background: "var(--color-bg)" }}>
+        <Header
+          snapshotDate={data ? isoDate(snapshotTimestamp(day, totalDays)) : "—"}
+          dayLabel={`${day} / ${totalDays}`}
+          onVerify={verify}
+          verifying={verifying}
+          verifiedAt={verifiedAt}
+        />
+        <Timeline day={day} totalDays={totalDays} onDay={setDay} />
+      </div>
 
       {error && <ErrorBanner message={error} />}
 
