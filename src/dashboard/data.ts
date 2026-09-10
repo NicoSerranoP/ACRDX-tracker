@@ -10,6 +10,7 @@ const parseSnapshot = (raw: RawSnapshot): Snapshot => ({
   oraclePrice: BigInt(raw.oraclePrice),
   pricePerShare: BigInt(raw.pricePerShare),
   priceLastUpdated: BigInt(raw.priceLastUpdated),
+  oracleAge: raw.oracleAge !== undefined ? BigInt(raw.oracleAge) : undefined,
 });
 
 export const parseShares = (raw: RawShares[]): Shares[] =>

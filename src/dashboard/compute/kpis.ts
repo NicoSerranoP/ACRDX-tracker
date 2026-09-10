@@ -20,7 +20,11 @@ export function computeKpis(params: {
   const sharePrice = ethOracle || Number(ethSnapshot.pricePerShare) / 1e6;
   const nav = Number(formatUnits(snapshot.total, 18)) * sharePrice;
   const failCount = checks.filter((c) => c.status === "BREACH").length;
-  const maxAge = Math.max(...recon.map((r) => parseFloat(r.age)));
+  // A live-verified snapshot carries the Chronicle oracle's own readWithAge() age, which is the
+  // authoritative figure; historical (shares.json) snapshots fall back to the recon-derived age.
+  const liveOracleAgeHours =
+    ethSnapshot.oracleAge !== undefined ? (Date.now() / 1000 - Number(ethSnapshot.oracleAge)) / 3600 : null;
+  const maxAge = liveOracleAgeHours ?? Math.max(...recon.map((r) => parseFloat(r.age)));
   const explorer = NETWORKS[Network.ETH].explorer;
 
   return [

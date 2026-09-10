@@ -15,6 +15,7 @@ export enum Network {
 export interface Snapshot {
   block: bigint;
   shares: bigint;
+  oracleAge?: bigint;
   oraclePrice: bigint;
   pricePerShare: bigint;
   priceLastUpdated: bigint;

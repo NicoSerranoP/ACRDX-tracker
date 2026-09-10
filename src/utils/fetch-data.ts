@@ -15,7 +15,7 @@ export function useFetchOnChainData() {
     try {
       await rpc.setupContracts();
 
-      const oraclePrice = await rpc.oracleContract.read.read();
+      const [oraclePrice, oracleAge] = (await rpc.oracleContract.read.readWithAge()) as [bigint, bigint];
 
       const networks = Object.values(Network);
 
@@ -32,6 +32,7 @@ export function useFetchOnChainData() {
             block: block.number,
             shares: totalSupply as bigint,
             oraclePrice: oraclePrice as bigint,
+            oracleAge: oracleAge as bigint,
             pricePerShare: pricePerShare as bigint,
             priceLastUpdated: priceLastUpdated as bigint,
           };
