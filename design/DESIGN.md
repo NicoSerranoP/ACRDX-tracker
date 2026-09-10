@@ -24,6 +24,14 @@ There are escrow contracts deployed in each network that contain crypto assets r
 
 To monitor ACRDX, we track the on-chain total supply of the token and multiply it by the oracle price provided by Chronicle Labs and their Proof Of Assets mechanism (it is a trusted mechanism). We follow up token supply and oracle price accross a time frame in order to check for anomalies. There is only one Chronicle Labs oracle and each network USDC vault was deployed using Axelar (cross-chain communication) so I assume the price feed is coming from the only Chronicle Labs oracle deployed on Ethereum mainnet.
 
+### What we deliberately do not monitor
+
+- ACRDX depends on Real World Assets (RWA) that live off-chain. Therefore it is imposible to monitor Apollo financial activities and we need to trust that the Chronicle Lab Proof Of Asset is working correctly and truthfully. I decided to deliberately not monitor these off-chain activities and assume Chronicle Labs is correct.
+
+- ACRDX requires a previous Know Your Customer (KYC) process and a minimum of $500,000 USDC deposit in order to invest in the protocol according to the [Centrifuge application](https://app.centrifuge.io/pool/281474976710664). There is a nACRDX token available for retail through the [Nest Credit app](https://www.nest.credit/vaults/nest-acrdx-vault) that allow users to be exposed to ACRDX without the former requirements. I decided to deliberately not monitor these retail tokens for the moment.
+
+- ACRDX uses the Centrifuge protocol which has [more than 24 security audits](https://docs.centrifuge.io/developer/security/audits/). I decided to assume Centrifuge is secure and working as expected. Therefore there is no Solidity security monitoring or Centrifuge core protocol monitoring in place.
+
 ### August 10th incident
 
 On August 10th 2026, 12 million share tokens on the Plume network were burned reducing Plume's total supply from 42 million to 30 million in a single transaction. The transaction authorized moving 12M tokens from the ALM Proxy contract to the zero address (0x000). There was no clear redemption or payment in the Plume's transaction so for outside observers it looked like someone had burned 12M tokens.
