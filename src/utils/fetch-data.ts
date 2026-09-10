@@ -49,9 +49,6 @@ export function useFetchOnChainData() {
       );
 
       setError(null);
-
-      console.log("oraclePrice: ", oraclePrice);
-      console.log("results: ", results);
     } catch (err) {
       setError((err as Error).message);
     }

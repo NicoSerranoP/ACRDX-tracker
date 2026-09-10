@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Network } from "../types";
 import type { Shares, Snapshot } from "../types";
 import type { RawShares, RawSnapshot } from "./types";
+import { useFetchOnChainData } from "../utils/fetch-data";
 
 const parseSnapshot = (raw: RawSnapshot): Snapshot => ({
   block: BigInt(raw.block),
@@ -23,22 +24,22 @@ export const parseShares = (raw: RawShares[]): Shares[] =>
 export interface ShareHistoryState {
   data: Shares[] | null;
   error: string | null;
-  /** True while a manually-triggered re-fetch (via verify()) is in flight. */
+  /** True while a manually-triggered live on-chain re-fetch (via verify()) is in flight. */
   verifying: boolean;
   /** Timestamp (ms) of the last successful manual verification, or null if never verified. */
   verifiedAt: number | null;
-  /** Re-fetches /shares.json on demand and, on success, stamps verifiedAt. */
+  /** Fetches the latest on-chain snapshot and, on success, merges it into the current day and stamps verifiedAt. */
   verify: () => void;
 }
 
 export function useShareHistory(): ShareHistoryState {
   const [data, setData] = useState<Shares[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [verifying, setVerifying] = useState(false);
   const [verifiedAt, setVerifiedAt] = useState<number | null>(null);
+  const { data: liveData, loading: verifying, error: liveError, fetchData: fetchLiveData } = useFetchOnChainData();
 
-  const fetchShares = useCallback((markVerified: boolean) => {
-    fetch("/shares.json", { cache: markVerified ? "no-store" : "default" })
+  useEffect(() => {
+    fetch("/shares.json")
       .then((response) => {
         if (!response.ok) throw new Error(`HTTP ${response.status} reading /shares.json`);
         return response.json();
@@ -46,29 +47,38 @@ export function useShareHistory(): ShareHistoryState {
       .then((raw: RawShares[]) => {
         setData(parseShares(raw));
         setError(null);
-        if (markVerified) setVerifiedAt(Date.now());
       })
       .catch((err: Error) => {
-        // A failed manual verify shouldn't blank out an already-loaded dashboard — only the
-        // initial load has no prior data to fall back on.
-        if (!markVerified) setData(null);
+        setData(null);
         setError(err.message);
-        if (markVerified) setVerifiedAt(null);
-      })
-      .finally(() => {
-        if (markVerified) setVerifying(false);
       });
   }, []);
 
+  // A successful verify() merges the live on-chain snapshot into the most recent day, rather
+  // than replacing the whole history, so the rest of the dashboard's day-by-day view is untouched.
   useEffect(() => {
-    fetchShares(false);
-  }, [fetchShares]);
+    if (!liveData) return;
+    const total = Object.values(Network).reduce((sum, network) => sum + liveData[network].shares, 0n);
+    setData((current) => {
+      if (!current || current.length === 0) return current;
+      const lastIndex = current.length - 1;
+      const updated = [...current];
+      updated[lastIndex] = { ...updated[lastIndex], total, blockNumbers: liveData };
+      return updated;
+    });
+    setError(null);
+    setVerifiedAt(Date.now());
+  }, [liveData]);
+
+  useEffect(() => {
+    if (!liveError) return;
+    setError(liveError);
+    setVerifiedAt(null);
+  }, [liveError]);
 
   const verify = () => {
     if (verifying) return;
-    setVerifying(true);
-    setVerifiedAt(null);
-    fetchShares(true);
+    fetchLiveData();
   };
 
   return { data, error, verifying, verifiedAt, verify };
