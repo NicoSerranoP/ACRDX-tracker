@@ -4,38 +4,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25628087",
+        "block": "25647767",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019554",
-        "priceLastUpdated": "1784894400",
-        "oraclePrice": "1019554312938520000"
+        "pricePerShare": "1019495",
+        "priceLastUpdated": "1785326400",
+        "oraclePrice": "1019495643447740000"
       },
       "OP": {
-        "block": "154802017",
+        "block": "154920500",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019554",
-        "priceLastUpdated": "1784894400",
+        "pricePerShare": "1019495",
+        "priceLastUpdated": "1785326400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "90929071",
+        "block": "91713493",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019554",
-        "priceLastUpdated": "1784894400",
+        "pricePerShare": "1019495",
+        "priceLastUpdated": "1785326400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49206733",
+        "block": "49325215",
         "shares": "0",
-        "pricePerShare": "1019554",
-        "priceLastUpdated": "1784894400",
+        "pricePerShare": "1019495",
+        "priceLastUpdated": "1785326400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "83786605",
+        "block": "84337205",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019554",
-        "priceLastUpdated": "1784894400",
+        "pricePerShare": "1019495",
+        "priceLastUpdated": "1785326400",
         "oraclePrice": "0"
       }
     }
@@ -45,38 +45,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25635260",
+        "block": "25654940",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019223",
-        "priceLastUpdated": "1785153600",
-        "oraclePrice": "1019223392349710000"
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
+        "oraclePrice": "1019595325406810000"
       },
       "OP": {
-        "block": "154845217",
+        "block": "154963700",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019223",
-        "priceLastUpdated": "1785153600",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "91215138",
+        "block": "91999742",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019223",
-        "priceLastUpdated": "1785153600",
+        "pricePerShare": "1019495",
+        "priceLastUpdated": "1785326400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49249933",
+        "block": "49368415",
         "shares": "0",
-        "pricePerShare": "1019223",
-        "priceLastUpdated": "1785153600",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "83990708",
+        "block": "84536157",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019223",
-        "priceLastUpdated": "1785153600",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       }
     }
@@ -86,38 +86,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25642436",
+        "block": "25662119",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019347",
-        "priceLastUpdated": "1785240000",
-        "oraclePrice": "1019347768602220000"
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
+        "oraclePrice": "1019595325406810000"
       },
       "OP": {
-        "block": "154888417",
+        "block": "155006900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019347",
-        "priceLastUpdated": "1785240000",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "91500906",
+        "block": "92286061",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019347",
-        "priceLastUpdated": "1785240000",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49293133",
+        "block": "49411615",
         "shares": "0",
-        "pricePerShare": "1019347",
-        "priceLastUpdated": "1785240000",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "84193817",
+        "block": "84740538",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019347",
-        "priceLastUpdated": "1785240000",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       }
     }
@@ -127,38 +127,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25649608",
+        "block": "25669299",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019495",
-        "priceLastUpdated": "1785326400",
-        "oraclePrice": "1019495643447740000"
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
+        "oraclePrice": "1019595325406810000"
       },
       "OP": {
-        "block": "154931617",
+        "block": "155050100",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019495",
-        "priceLastUpdated": "1785326400",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "91787164",
+        "block": "92572391",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019495",
-        "priceLastUpdated": "1785326400",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49336333",
+        "block": "49454815",
         "shares": "0",
-        "pricePerShare": "1019495",
-        "priceLastUpdated": "1785326400",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "84386676",
+        "block": "84900846",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019495",
-        "priceLastUpdated": "1785326400",
+        "pricePerShare": "1019595",
+        "priceLastUpdated": "1785412800",
         "oraclePrice": "0"
       }
     }
@@ -168,38 +168,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25656790",
+        "block": "25676469",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
-        "oraclePrice": "1019595325406810000"
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
+        "oraclePrice": "1019239966632140000"
       },
       "OP": {
-        "block": "154974817",
+        "block": "155093300",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "92073424",
+        "block": "92858399",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49379533",
+        "block": "49498015",
         "shares": "0",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "84588916",
+        "block": "85104709",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       }
     }
@@ -209,38 +209,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25663967",
+        "block": "25683653",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
-        "oraclePrice": "1019595325406810000"
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
+        "oraclePrice": "1019987965932140000"
       },
       "OP": {
-        "block": "155018017",
+        "block": "155136500",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "92359750",
+        "block": "93144385",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49422733",
+        "block": "49541215",
         "shares": "0",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "84792147",
+        "block": "85309500",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1019239",
+        "priceLastUpdated": "1785499200",
         "oraclePrice": "0"
       }
     }
@@ -250,38 +250,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25671137",
+        "block": "25690824",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
-        "oraclePrice": "1019595325406810000"
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
+        "oraclePrice": "1020232490984800000"
       },
       "OP": {
-        "block": "155061217",
+        "block": "155179700",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "92646068",
+        "block": "93430786",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49465933",
+        "block": "49584415",
         "shares": "0",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "84953016",
+        "block": "85506445",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019595",
-        "priceLastUpdated": "1785412800",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       }
     }
@@ -291,38 +291,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25678318",
+        "block": "25698010",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
-        "oraclePrice": "1019239966632140000"
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
+        "oraclePrice": "1020232490984800000"
       },
       "OP": {
-        "block": "155104417",
+        "block": "155222900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "92932044",
+        "block": "93717233",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49509133",
+        "block": "49627615",
         "shares": "0",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "85156665",
+        "block": "85707933",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       }
     }
@@ -332,38 +332,38 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25685498",
+        "block": "25705183",
         "shares": "378869494500836268665209",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
-        "oraclePrice": "1020103520440230000"
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
+        "oraclePrice": "1021003405586530000"
       },
       "OP": {
-        "block": "155147617",
+        "block": "155266100",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "93218084",
+        "block": "94003503",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49552333",
+        "block": "49670815",
         "shares": "0",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "85359855",
+        "block": "85902982",
         "shares": "32320262971888335278993277",
-        "pricePerShare": "1019239",
-        "priceLastUpdated": "1785499200",
+        "pricePerShare": "1020232",
+        "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       }
     }
@@ -373,35 +373,35 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25692671",
+        "block": "25712342",
         "shares": "378869494500836268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1020232490984800000"
+        "oraclePrice": "1021003405586530000"
       },
       "OP": {
-        "block": "155190817",
+        "block": "155309300",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "93504501",
+        "block": "94288509",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49595533",
+        "block": "49714015",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "85558156",
+        "block": "86089272",
         "shares": "32320262971888335278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
@@ -414,35 +414,35 @@
     "total": "42634425926537085870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25699859",
+        "block": "25719522",
         "shares": "378869494500836268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1020232490984800000"
+        "oraclePrice": "1021003405586530000"
       },
       "OP": {
-        "block": "155234017",
+        "block": "155352500",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "93790947",
+        "block": "94572976",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49638733",
+        "block": "49757215",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "85759685",
+        "block": "86271725",
         "shares": "32320262971888335278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
@@ -452,39 +452,39 @@
   },
   {
     "day": 12,
-    "total": "42634425926537085870702801",
+    "total": "30496112099856129870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25707028",
-        "shares": "378869494500836268665209",
+        "block": "25726696",
+        "shares": "261058707357980268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1021003405586530000"
+        "oraclePrice": "1021856504813260000"
       },
       "OP": {
-        "block": "155277217",
+        "block": "155395700",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "94077221",
+        "block": "94858962",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49681933",
+        "block": "49800415",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "85952968",
-        "shares": "32320262971888335278993277",
+        "block": "86456888",
+        "shares": "20299759932350235278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
@@ -493,39 +493,39 @@
   },
   {
     "day": 13,
-    "total": "42634425926537085870702801",
+    "total": "30496112099856129870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25714189",
-        "shares": "378869494500836268665209",
+        "block": "25733851",
+        "shares": "261058707357980268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1021003405586530000"
+        "oraclePrice": "1021081811273890000"
       },
       "OP": {
-        "block": "155320417",
+        "block": "155438900",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "94361494",
+        "block": "95145090",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49725133",
+        "block": "49843615",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "86136361",
-        "shares": "32320262971888335278993277",
+        "block": "86655723",
+        "shares": "20299759932350235278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
@@ -534,39 +534,39 @@
   },
   {
     "day": 14,
-    "total": "42634425926537085870702801",
+    "total": "30496112099856129870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25721364",
-        "shares": "378869494500836268665209",
+        "block": "25741015",
+        "shares": "261058707357980268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1021003405586530000"
+        "oraclePrice": "1022709744494110000"
       },
       "OP": {
-        "block": "155363617",
+        "block": "155482100",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "94646656",
+        "block": "95428686",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49768333",
+        "block": "49886815",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "86318045",
-        "shares": "32320262971888335278993277",
+        "block": "86850268",
+        "shares": "20299759932350235278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
@@ -578,35 +578,35 @@
     "total": "30496112099856129870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25728533",
+        "block": "25748200",
         "shares": "261058707357980268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1021856504813260000"
+        "oraclePrice": "1023291748114580000"
       },
       "OP": {
-        "block": "155406817",
+        "block": "155525300",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "94932649",
+        "block": "95714780",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49811533",
+        "block": "49930015",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "86505507",
+        "block": "87053836",
         "shares": "20299759932350235278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
@@ -619,35 +619,35 @@
     "total": "30496112099856129870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25735698",
+        "block": "25755374",
         "shares": "261058707357980268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1021081811273890000"
+        "oraclePrice": "1023878855962290000"
       },
       "OP": {
-        "block": "155450017",
+        "block": "155568500",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "95218769",
+        "block": "96000996",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49854733",
+        "block": "49973215",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "86705759",
+        "block": "87253153",
         "shares": "20299759932350235278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
@@ -657,38 +657,38 @@
   },
   {
     "day": 17,
-    "total": "30496112099856129870702801",
+    "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25742866",
-        "shares": "261058707357980268665209",
+        "block": "25762542",
+        "shares": "237532676989850268665209",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
-        "oraclePrice": "1022709744494110000"
+        "oraclePrice": "1023878855962290000"
       },
       "OP": {
-        "block": "155493217",
+        "block": "155611700",
         "shares": "97931995174088943940407",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "95502360",
+        "block": "96287261",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49897933",
+        "block": "50016415",
         "shares": "0",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "86902385",
+        "block": "87455527",
         "shares": "20299759932350235278993277",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
@@ -698,41 +698,41 @@
   },
   {
     "day": 18,
-    "total": "30496112099856129870702801",
+    "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25750045",
-        "shares": "261058707357980268665209",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
-        "oraclePrice": "1023291748114580000"
+        "block": "25769724",
+        "shares": "237532676989850268665209",
+        "pricePerShare": "1020831",
+        "priceLastUpdated": "1785931200",
+        "oraclePrice": "1023878855962290000"
       },
       "OP": {
-        "block": "155536417",
+        "block": "155654900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1020831",
+        "priceLastUpdated": "1785931200",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "95788452",
+        "block": "96573512",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1020232",
         "priceLastUpdated": "1785844800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49941133",
+        "block": "50059615",
         "shares": "0",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1020831",
+        "priceLastUpdated": "1785931200",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "87104600",
+        "block": "87658804",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1020831",
+        "priceLastUpdated": "1785931200",
         "oraclePrice": "0"
       }
     }
@@ -742,38 +742,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25757217",
+        "block": "25776899",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
-        "oraclePrice": "1023878855962290000"
+        "pricePerShare": "1021003",
+        "priceLastUpdated": "1786017600",
+        "oraclePrice": "1023808345240110000"
       },
       "OP": {
-        "block": "155579617",
+        "block": "155698100",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021003",
+        "priceLastUpdated": "1786017600",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "96074645",
+        "block": "96859584",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021003",
+        "priceLastUpdated": "1786017600",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "49984333",
+        "block": "50102815",
         "shares": "0",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021003",
+        "priceLastUpdated": "1786017600",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "87303858",
+        "block": "87856959",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021003",
+        "priceLastUpdated": "1786017600",
         "oraclePrice": "0"
       }
     }
@@ -783,38 +783,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25764387",
+        "block": "25784073",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
-        "oraclePrice": "1023878855962290000"
+        "pricePerShare": "1021856",
+        "priceLastUpdated": "1786104000",
+        "oraclePrice": "1024466650459980000"
       },
       "OP": {
-        "block": "155622817",
+        "block": "155741300",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021856",
+        "priceLastUpdated": "1786104000",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "96360944",
+        "block": "97143977",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021856",
+        "priceLastUpdated": "1786104000",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50027533",
+        "block": "50146015",
         "shares": "0",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021856",
+        "priceLastUpdated": "1786104000",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "87507657",
+        "block": "88051871",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021856",
+        "priceLastUpdated": "1786104000",
         "oraclePrice": "0"
       }
     }
@@ -824,38 +824,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25771571",
+        "block": "25791251",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
-        "oraclePrice": "1023878855962290000"
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
+        "oraclePrice": "1024155864555510000"
       },
       "OP": {
-        "block": "155666017",
+        "block": "155784500",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "96647191",
+        "block": "97423597",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1020232",
-        "priceLastUpdated": "1785844800",
+        "pricePerShare": "1021081",
+        "priceLastUpdated": "1786363200",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50070733",
+        "block": "50189215",
         "shares": "0",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "87710781",
+        "block": "88252845",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
         "oraclePrice": "0"
       }
     }
@@ -865,38 +865,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25778747",
+        "block": "25798431",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
-        "oraclePrice": "1023808345240110000"
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
+        "oraclePrice": "1024743089295180000"
       },
       "OP": {
-        "block": "155709217",
+        "block": "155827700",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "96933010",
+        "block": "97707190",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50113933",
+        "block": "50232415",
         "shares": "0",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "87906055",
+        "block": "88447035",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1021003",
-        "priceLastUpdated": "1786017600",
+        "pricePerShare": "1023291",
+        "priceLastUpdated": "1786536000",
         "oraclePrice": "0"
       }
     }
@@ -906,38 +906,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25785923",
+        "block": "25805610",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1021856",
-        "priceLastUpdated": "1786104000",
-        "oraclePrice": "1024466650459980000"
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
+        "oraclePrice": "1023990471762550000"
       },
       "OP": {
-        "block": "155752417",
+        "block": "155870900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1021856",
-        "priceLastUpdated": "1786104000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "97216800",
+        "block": "97990444",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1021856",
-        "priceLastUpdated": "1786104000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50157133",
+        "block": "50275615",
         "shares": "0",
-        "pricePerShare": "1021856",
-        "priceLastUpdated": "1786104000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "88102766",
+        "block": "88647936",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1021856",
-        "priceLastUpdated": "1786104000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       }
     }
@@ -947,38 +947,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25793100",
+        "block": "25812784",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1023291",
-        "priceLastUpdated": "1786536000",
-        "oraclePrice": "1024155864555510000"
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
+        "oraclePrice": "1023990471762550000"
       },
       "OP": {
-        "block": "155795617",
+        "block": "155914100",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1023291",
-        "priceLastUpdated": "1786536000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "97497029",
+        "block": "98276410",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1023291",
-        "priceLastUpdated": "1786536000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50200333",
+        "block": "50318815",
         "shares": "0",
-        "pricePerShare": "1023291",
-        "priceLastUpdated": "1786536000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "88302985",
+        "block": "88869346",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1023291",
-        "priceLastUpdated": "1786536000",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       }
     }
@@ -988,35 +988,35 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25800279",
+        "block": "25819957",
         "shares": "237532676989850268665209",
         "pricePerShare": "1023808",
         "priceLastUpdated": "1786708800",
-        "oraclePrice": "1024743089295180000"
+        "oraclePrice": "1023990471762550000"
       },
       "OP": {
-        "block": "155838817",
+        "block": "155957300",
         "shares": "97931995174088943940407",
         "pricePerShare": "1023808",
         "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "97780709",
+        "block": "98560288",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1023878",
-        "priceLastUpdated": "1786622400",
+        "pricePerShare": "1023808",
+        "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50243533",
+        "block": "50362015",
         "shares": "0",
         "pricePerShare": "1023808",
         "priceLastUpdated": "1786708800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "88496550",
+        "block": "89089702",
         "shares": "20299759932350235278993277",
         "pricePerShare": "1023808",
         "priceLastUpdated": "1786708800",
@@ -1029,38 +1029,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25807455",
+        "block": "25827139",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
-        "oraclePrice": "1023990471762550000"
+        "pricePerShare": "1023990",
+        "priceLastUpdated": "1787227200",
+        "oraclePrice": "1023954059492730000"
       },
       "OP": {
-        "block": "155882017",
+        "block": "156000500",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1023990",
+        "priceLastUpdated": "1787227200",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "98063994",
+        "block": "98841580",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1023990",
+        "priceLastUpdated": "1787227200",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50286733",
+        "block": "50405215",
         "shares": "0",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1023990",
+        "priceLastUpdated": "1787227200",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "88704785",
+        "block": "89305508",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1023990",
+        "priceLastUpdated": "1787227200",
         "oraclePrice": "0"
       }
     }
@@ -1070,38 +1070,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25814626",
+        "block": "25834309",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
-        "oraclePrice": "1023990471762550000"
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
+        "oraclePrice": "1024557124142090000"
       },
       "OP": {
-        "block": "155925217",
+        "block": "156043700",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "98350064",
+        "block": "99126464",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50329933",
+        "block": "50448415",
         "shares": "0",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "88925872",
+        "block": "89501734",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       }
     }
@@ -1111,38 +1111,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25821803",
+        "block": "25841485",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
-        "oraclePrice": "1023990471762550000"
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
+        "oraclePrice": "1024611503774820000"
       },
       "OP": {
-        "block": "155968417",
+        "block": "156086900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "98631380",
+        "block": "99412609",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50373133",
+        "block": "50491615",
         "shares": "0",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "89146333",
+        "block": "89699813",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1023808",
-        "priceLastUpdated": "1786708800",
+        "pricePerShare": "1024557",
+        "priceLastUpdated": "1787572800",
         "oraclePrice": "0"
       }
     }
@@ -1152,38 +1152,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25828980",
+        "block": "25848661",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1023954",
-        "priceLastUpdated": "1787313600",
-        "oraclePrice": "1023954059492730000"
+        "pricePerShare": "1024625",
+        "priceLastUpdated": "1787659200",
+        "oraclePrice": "1024744344718680000"
       },
       "OP": {
-        "block": "156011617",
+        "block": "156130100",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1023954",
-        "priceLastUpdated": "1787313600",
+        "pricePerShare": "1024625",
+        "priceLastUpdated": "1787659200",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "98915244",
+        "block": "99697006",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1023990",
-        "priceLastUpdated": "1787227200",
+        "pricePerShare": "1024625",
+        "priceLastUpdated": "1787659200",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50416333",
+        "block": "50534815",
         "shares": "0",
-        "pricePerShare": "1023954",
-        "priceLastUpdated": "1787313600",
+        "pricePerShare": "1024625",
+        "priceLastUpdated": "1787659200",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "89355141",
+        "block": "89894240",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1023954",
-        "priceLastUpdated": "1787313600",
+        "pricePerShare": "1024625",
+        "priceLastUpdated": "1787659200",
         "oraclePrice": "0"
       }
     }
@@ -1193,38 +1193,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25836156",
+        "block": "25855835",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
-        "oraclePrice": "1024557124142090000"
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
+        "oraclePrice": "1024898701821820000"
       },
       "OP": {
-        "block": "156054817",
+        "block": "156173300",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "99200125",
+        "block": "99981986",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024744",
+        "priceLastUpdated": "1787745600",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50459533",
+        "block": "50578015",
         "shares": "0",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "89553528",
+        "block": "90102108",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       }
     }
@@ -1234,38 +1234,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25843327",
+        "block": "25863008",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
-        "oraclePrice": "1024611503774820000"
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
+        "oraclePrice": "1024898701821820000"
       },
       "OP": {
-        "block": "156098017",
+        "block": "156216500",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "99486189",
+        "block": "100267712",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024744",
+        "priceLastUpdated": "1787745600",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50502733",
+        "block": "50621215",
         "shares": "0",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "89748509",
+        "block": "90293197",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024557",
-        "priceLastUpdated": "1787572800",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       }
     }
@@ -1275,38 +1275,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25850509",
+        "block": "25870187",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024744",
-        "priceLastUpdated": "1787745600",
-        "oraclePrice": "1024744344718680000"
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
+        "oraclePrice": "1024898701821820000"
       },
       "OP": {
-        "block": "156141217",
+        "block": "156259700",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024744",
-        "priceLastUpdated": "1787745600",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "99770201",
+        "block": "100553470",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1024744",
         "priceLastUpdated": "1787745600",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50545933",
+        "block": "50664415",
         "shares": "0",
-        "pricePerShare": "1024744",
-        "priceLastUpdated": "1787745600",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "89946526",
+        "block": "90484461",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024744",
-        "priceLastUpdated": "1787745600",
+        "pricePerShare": "1024912",
+        "priceLastUpdated": "1787832000",
         "oraclePrice": "0"
       }
     }
@@ -1316,38 +1316,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25857677",
+        "block": "25877358",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
-        "oraclePrice": "1024898701821820000"
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
+        "oraclePrice": "1024851749980240000"
       },
       "OP": {
-        "block": "156184417",
+        "block": "156302900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "100055591",
+        "block": "100839653",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024744",
-        "priceLastUpdated": "1787745600",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50589133",
+        "block": "50707615",
         "shares": "0",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "90152446",
+        "block": "90673309",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       }
     }
@@ -1357,38 +1357,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25864855",
+        "block": "25884532",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
-        "oraclePrice": "1024898701821820000"
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
+        "oraclePrice": "1024851749980240000"
       },
       "OP": {
-        "block": "156227617",
+        "block": "156346100",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "100340927",
+        "block": "101125827",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024744",
-        "priceLastUpdated": "1787745600",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50632333",
+        "block": "50750815",
         "shares": "0",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "90341401",
+        "block": "90856836",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024851",
+        "priceLastUpdated": "1787918400",
         "oraclePrice": "0"
       }
     }
@@ -1398,38 +1398,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25872032",
+        "block": "25891708",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
-        "oraclePrice": "1024898701821820000"
+        "pricePerShare": "1024212",
+        "priceLastUpdated": "1788264000",
+        "oraclePrice": "1024531833245660000"
       },
       "OP": {
-        "block": "156270817",
+        "block": "156389300",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024212",
+        "priceLastUpdated": "1788264000",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "100627139",
+        "block": "101412046",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024744",
-        "priceLastUpdated": "1787745600",
+        "pricePerShare": "1024212",
+        "priceLastUpdated": "1788264000",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50675533",
+        "block": "50794015",
         "shares": "0",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024212",
+        "priceLastUpdated": "1788264000",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "90533481",
+        "block": "91038927",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024912",
-        "priceLastUpdated": "1787832000",
+        "pricePerShare": "1024212",
+        "priceLastUpdated": "1788264000",
         "oraclePrice": "0"
       }
     }
@@ -1439,38 +1439,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25879201",
+        "block": "25898878",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
-        "oraclePrice": "1024851749980240000"
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
+        "oraclePrice": "1024337106840550000"
       },
       "OP": {
-        "block": "156314017",
+        "block": "156432500",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "100913325",
+        "block": "101698264",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024212",
+        "priceLastUpdated": "1788264000",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50718733",
+        "block": "50837215",
         "shares": "0",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "90717184",
+        "block": "91229874",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       }
     }
@@ -1480,38 +1480,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25886376",
+        "block": "25906051",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
-        "oraclePrice": "1024531833245660000"
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
+        "oraclePrice": "1024337106840550000"
       },
       "OP": {
-        "block": "156357217",
+        "block": "156475700",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "101199494",
+        "block": "101983787",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50761933",
+        "block": "50880415",
         "shares": "0",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "90903715",
+        "block": "91421303",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024851",
-        "priceLastUpdated": "1787918400",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       }
     }
@@ -1521,38 +1521,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25893550",
+        "block": "25913229",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024212",
-        "priceLastUpdated": "1788264000",
-        "oraclePrice": "1024531833245660000"
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
+        "oraclePrice": "1024337106840550000"
       },
       "OP": {
-        "block": "156400417",
+        "block": "156518900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024212",
-        "priceLastUpdated": "1788264000",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "101485682",
+        "block": "102267879",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024212",
-        "priceLastUpdated": "1788264000",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50805133",
+        "block": "50923615",
         "shares": "0",
-        "pricePerShare": "1024212",
-        "priceLastUpdated": "1788264000",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "91086536",
+        "block": "91614366",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024212",
-        "priceLastUpdated": "1788264000",
+        "pricePerShare": "1024337",
+        "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       }
     }
@@ -1562,35 +1562,35 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25900725",
+        "block": "25920405",
         "shares": "237532676989850268665209",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "1024337106840550000"
       },
       "OP": {
-        "block": "156443617",
+        "block": "156562100",
         "shares": "97931995174088943940407",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "101771943",
+        "block": "102552022",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50848333",
+        "block": "50966815",
         "shares": "0",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "91279445",
+        "block": "91810392",
         "shares": "20299759932350235278993277",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
@@ -1603,35 +1603,35 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25907898",
+        "block": "25927574",
         "shares": "237532676989850268665209",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "1024337106840550000"
       },
       "OP": {
-        "block": "156486817",
+        "block": "156605300",
         "shares": "97931995174088943940407",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "102056915",
+        "block": "102837070",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50891533",
+        "block": "51010015",
         "shares": "0",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "91468878",
+        "block": "92006318",
         "shares": "20299759932350235278993277",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
@@ -1644,38 +1644,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25915071",
+        "block": "25934741",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
-        "oraclePrice": "1024337106840550000"
+        "pricePerShare": "1024936",
+        "priceLastUpdated": "1788436800",
+        "oraclePrice": "1025485073040210000"
       },
       "OP": {
-        "block": "156530017",
+        "block": "156648500",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1024936",
+        "priceLastUpdated": "1788436800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "102341019",
+        "block": "103123102",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50934733",
+        "block": "51053215",
         "shares": "0",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1024936",
+        "priceLastUpdated": "1788436800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "91664529",
+        "block": "92199767",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1024936",
+        "priceLastUpdated": "1788436800",
         "oraclePrice": "0"
       }
     }
@@ -1685,38 +1685,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25922252",
+        "block": "25941912",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
-        "oraclePrice": "1024337106840550000"
+        "pricePerShare": "1025612",
+        "priceLastUpdated": "1788868800",
+        "oraclePrice": "1025612189166240000"
       },
       "OP": {
-        "block": "156573217",
+        "block": "156691700",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1025612",
+        "priceLastUpdated": "1788868800",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "102625182",
+        "block": "103408861",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "50977933",
+        "block": "51096415",
         "shares": "0",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1025612",
+        "priceLastUpdated": "1788868800",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "91860603",
+        "block": "92387889",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1025612",
+        "priceLastUpdated": "1788868800",
         "oraclePrice": "0"
       }
     }
@@ -1726,38 +1726,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25929418",
+        "block": "25949088",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
-        "oraclePrice": "1024337106840550000"
+        "pricePerShare": "1024405",
+        "priceLastUpdated": "1788955200",
+        "oraclePrice": "1024405171724970000"
       },
       "OP": {
-        "block": "156616417",
+        "block": "156734900",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1024405",
+        "priceLastUpdated": "1788955200",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "102910704",
+        "block": "103694427",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "51021133",
+        "block": "51139615",
         "shares": "0",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1024405",
+        "priceLastUpdated": "1788955200",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "92056918",
+        "block": "92576949",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1024405",
+        "priceLastUpdated": "1788955200",
         "oraclePrice": "0"
       }
     }
@@ -1767,38 +1767,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25936588",
+        "block": "25956258",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1025485",
-        "priceLastUpdated": "1788523200",
-        "oraclePrice": "1025485073040210000"
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
+        "oraclePrice": "1023164561433330000"
       },
       "OP": {
-        "block": "156659617",
+        "block": "156778100",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1025485",
-        "priceLastUpdated": "1788523200",
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "103196452",
+        "block": "103979358",
         "shares": "9837361464973825379103908",
         "pricePerShare": "1024337",
         "priceLastUpdated": "1788350400",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "51064333",
+        "block": "51182815",
         "shares": "0",
-        "pricePerShare": "1025485",
-        "priceLastUpdated": "1788523200",
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "92248805",
+        "block": "92764700",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1025485",
-        "priceLastUpdated": "1788523200",
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
         "oraclePrice": "0"
       }
     }
@@ -1808,38 +1808,38 @@
     "total": "30472586069487999870702801",
     "blockNumbers": {
       "ETH": {
-        "block": "25943760",
+        "block": "25963433",
         "shares": "237532676989850268665209",
-        "pricePerShare": "1025612",
-        "priceLastUpdated": "1788868800",
-        "oraclePrice": "1025612189166240000"
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
+        "oraclePrice": "1023164561433330000"
       },
       "OP": {
-        "block": "156702817",
+        "block": "156821300",
         "shares": "97931995174088943940407",
-        "pricePerShare": "1025612",
-        "priceLastUpdated": "1788868800",
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
         "oraclePrice": "0"
       },
       "MONAD": {
-        "block": "103482309",
+        "block": "104262716",
         "shares": "9837361464973825379103908",
-        "pricePerShare": "1024337",
-        "priceLastUpdated": "1788350400",
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
         "oraclePrice": "0"
       },
       "BASE": {
-        "block": "51107533",
+        "block": "51226015",
         "shares": "0",
-        "pricePerShare": "1025612",
-        "priceLastUpdated": "1788868800",
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
         "oraclePrice": "0"
       },
       "PLUME": {
-        "block": "92436120",
+        "block": "92960139",
         "shares": "20299759932350235278993277",
-        "pricePerShare": "1025612",
-        "priceLastUpdated": "1788868800",
+        "pricePerShare": "1023164",
+        "priceLastUpdated": "1789041600",
         "oraclePrice": "0"
       }
     }
